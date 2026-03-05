@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bingjie Dang - Home</title>
     <style>
-        /* 全局基础设置：白灰色背景，黑色字体 */
+        /* ================= 基础颜色与排版 ================= */
         :root {
             --bg-color: #f8f9fa;     /* 浅灰白背景 */
             --content-bg: #ffffff;   /* 内容区纯白 */
-            --text-color: #202124;   /* 谷歌标准黑灰字体 */
-            --header-bg: #dcbca1;    /* 完美匹配截图的浅棕色顶栏 */
+            --text-color: #202124;   /* 黑灰字体 */
+            --header-bg: #dcbca1;    /* 匹配截图的浅棕色顶栏 */
             --button-hover: #c9a588; /* 按钮悬浮变深 */
-            --link-blue: #1a73e8;    /* 邮箱链接蓝色 */
+            --link-blue: #1a73e8;    /* 链接蓝色 */
         }
 
         body {
@@ -22,10 +22,9 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            scroll-behavior: smooth; /* 点击按钮时平滑滚动跳转 */
         }
 
-        /* 顶部导航栏 */
+        /* ================= 顶部导航与按钮 ================= */
         header {
             background-color: var(--header-bg);
             padding: 15px 5%;
@@ -41,40 +40,67 @@
             font-size: 1.3rem;
             font-weight: bold;
             color: #000;
-            margin-right: auto; /* 将标题推到最左边 */
+            margin-right: auto;
         }
 
-        /* 导航按钮样式 */
         nav {
             display: flex;
             gap: 10px;
         }
 
-        nav a {
-            text-decoration: none;
+        /* 真正的按钮样式 */
+        .nav-btn {
+            background: none;
+            border: none;
             color: #000;
             font-size: 0.9rem;
             font-weight: 600;
-            padding: 8px 15px;
-            border-radius: 5px; /* 按钮圆角 */
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
             transition: background-color 0.2s, transform 0.1s;
+            font-family: inherit;
         }
 
-        nav a:hover {
+        .nav-btn:hover {
             background-color: var(--button-hover);
-            transform: translateY(-2px); /* 悬浮时按钮微微浮起 */
+            transform: translateY(-2px);
         }
 
-        /* 主内容区域 (白板) */
+        /* 当前激活的按钮样式 */
+        .nav-btn.active {
+            background-color: rgba(0,0,0,0.1);
+            border-bottom: 3px solid #000;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        /* ================= 主内容区域 ================= */
         .container {
             max-width: 1000px;
             margin: 40px auto;
             background-color: var(--content-bg);
             padding: 60px 80px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            min-height: 70vh; /* 确保内容少时页面也不会太短 */
         }
 
-        /* 个人简介排版 */
+        /* 页面切换逻辑（默认只显示 Home） */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ================= HOME 页面排版 ================= */
         .profile-section {
             display: flex;
             gap: 50px;
@@ -85,32 +111,23 @@
         /* 圆形照片强制设置 */
         .profile-img {
             width: 220px;
-            height: 220px; /* 必须宽高一致 */
-            object-fit: cover; /* 保证照片不变形 */
-            border-radius: 50%; /* 裁切为绝对的圆形 */
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .profile-text {
-            font-size: 1.15rem;
-        }
+        .profile-text { font-size: 1.15rem; }
+        .profile-text p { margin: 8px 0; }
+        .profile-text a { color: var(--link-blue); text-decoration: none; }
 
-        .profile-text p {
-            margin: 8px 0;
-        }
-
-        .profile-text a {
-            color: var(--link-blue);
-            text-decoration: none;
-        }
-
-        /* 文献列表排版 */
+        /* ================= 文献列表通用排版 ================= */
         .section-title {
             font-size: 1.4rem;
             font-weight: bold;
             border-bottom: 2px solid #eee;
             padding-bottom: 10px;
-            margin-top: 50px;
+            margin-top: 20px;
             margin-bottom: 30px;
         }
 
@@ -120,6 +137,9 @@
             color: #444;
             margin-top: 30px;
             margin-bottom: 15px;
+            background-color: #f1f3f4;
+            padding: 5px 15px;
+            border-radius: 4px;
         }
 
         .pub-list {
@@ -132,20 +152,12 @@
             font-size: 1rem;
             text-align: justify;
             padding-left: 20px;
-            text-indent: -20px; /* 悬挂缩进，让第二行对齐 */
+            text-indent: -20px; /* 悬挂缩进 */
         }
 
-        .pub-list em {
-            font-style: italic;
-            font-weight: 600;
-        }
+        .pub-list em { font-style: italic; font-weight: 600; }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #666;
-            font-size: 0.9rem;
-        }
+        footer { text-align: center; padding: 30px; color: #666; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -153,31 +165,46 @@
     <header>
         <div class="site-title">Bingjie Dang</div>
         <nav>
-            <a href="#home">HOME</a>
-            <a href="#research">RESEARCH</a>
-            <a href="#publications">PUBLICATIONS</a>
-            <a href="#team">TEAM</a>
-            <a href="#news">NEWS</a>
-            <a href="#resources">RESOURCES</a>
-            <a href="#contact">CONTACT</a>
+            <button class="nav-btn active" onclick="switchTab('home-page')">HOME</button>
+            <button class="nav-btn" onclick="switchTab('research-page')">RESEARCH</button>
+            <button class="nav-btn" onclick="switchTab('publications-page')">PUBLICATIONS</button>
+            <button class="nav-btn" onclick="switchTab('team-page')">TEAM</button>
+            <button class="nav-btn" onclick="switchTab('news-page')">NEWS</button>
+            <button class="nav-btn" onclick="switchTab('resources-page')">RESOURCES</button>
+            <button class="nav-btn" onclick="switchTab('contact-page')">CONTACT</button>
         </nav>
     </header>
 
     <div class="container">
         
-        <section id="home" class="profile-section">
-            <img src="profile.jpeg" alt="Dr. Bingjie Dang" class="profile-img">
-            <div class="profile-text">
-                <p><strong>Dr. Bingjie Dang</strong></p>
-                <p><em><strong>Research Fellow</strong></em></p>
-                <p><strong>College of Design and Engineering,</strong></p>
-                <p><strong>National University of Singapore</strong></p>
-                <p><strong>Email:</strong> <a href="mailto:bing.joe@nus.edu.sg">bing.joe@nus.edu.sg</a></p>
-            </div>
-        </section>
+        <div id="home-page" class="page-section active">
+            
+            <section class="profile-section">
+                <img src="profile.jpeg" alt="Dr. Bingjie Dang" class="profile-img">
+                <div class="profile-text">
+                    <p><strong>Dr. Bingjie Dang</strong></p>
+                    <p><em><strong>Research Fellow</strong></em></p>
+                    <p><strong>College of Design and Engineering,</strong></p>
+                    <p><strong>National University of Singapore</strong></p>
+                    <p><strong>Email:</strong> <a href="mailto:bing.joe@nus.edu.sg">bing.joe@nus.edu.sg</a></p>
+                </div>
+            </section>
 
-        <section id="publications">
-            <h2 class="section-title">Selected current articles:</h2>
+            <section>
+                <h2 class="section-title">Selected current articles:</h2>
+                <ul class="pub-list">
+                    <li>Tao Zeng‡, Zhongran Liu‡, Youdi Gu‡, <strong>Bingjie Dang‡</strong>, Yuan Gao, Tianlong Xu, Peng Li, Shu Shi, Kaixuan Sun, Yao Zhu, Xiao Gong, He Tian, & Jingsheng Chen. "A Nitride Based Non-Volatile Memory Enabled by Electric-Field-Induced Phase Transition," <em>Nature Materials</em>, 2026 (Accepted) <strong>‡Equal contributions</strong></li>
+                    <li><strong>Bingjie Dang</strong>, Teng Zhang, Fanqi Meng, Keqin Liu, Liutao Yu, Qinghua Zhang, Si Wu, Lin Gu, Ru Huang, Yuchao Yang. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em> 9, 213–224, 2026.</li>
+                    <li><strong>Bingjie Dang</strong>, Kaixuan Sun, Hanxin Su, Jiaxin Chen, Pengyu Yao, Tao Zeng, Shu Shi, Guowei Zhou, Liang Liu, Xiaohong Xu and Jingsheng Chen, "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.</li>
+                    <li><strong>Bingjie Dang</strong>, Teng Zhang, Keqin Liu, Ru Huang, and Yuchao Yang, “Reconfigurable Optic In-Sensor Processing Based on a Multi-Phototransistors-One-Memristor Array,” <em>Nature Electronics</em> 7(11), 991–1003, 2024.</li>
+                    <li>Xulei Wu‡, <strong>Bingjie Dang‡</strong>, Teng Zhang, Xiulong Wu, Yuchao Yang, Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons, <em>Science Advances</em> 10, 2024, eadl2767. <strong>‡Equal contributions</strong></li>
+                    <li><strong>Bingjie Dang</strong>, Keqin Liu, xulei wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang, "One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing," <em>Adv. Mater.</em>, 2022, 2204844, (doi:10.1002/adma.202204844)</li>
+                </ul>
+            </section>
+        </div>
+
+        <div id="publications-page" class="page-section">
+            <h2 class="section-title">Full Publications List</h2>
             
             <div class="year-title">2026</div>
             <ul class="pub-list">
@@ -248,7 +275,16 @@
                 <li>Jing Sun, Hong Wang, Fang Song, Zhan Wang, <strong>Bingjie Dang</strong>, Haixia Gao, Mei Yang, Xiaohua Ma, and Yue Hao, "Physically Transient Threshold Switching Device Based on Magnesium Oxide for Security Application," <em>Small</em>, Vol. 14, no. 7, May. 2018. (doi: 10.1002/smll.201800945)</li>
                 <li>Jing Sun, Hong Wang, Fang Song, Zhan Wang, <strong>Bingjie Dang</strong>, Haixia Gao, Mei Yang, Xiaohua Ma, and Yue Hao, "Secure Electronics: Physically Transient Threshold Switching Device Based on Magnesium Oxide for Security Application," <em>Small</em>, 180094, May. 2018. (<strong>Cover</strong>, doi: 10.1002/smll.201870127105)</li>
             </ul>
-        </section>
+        </div>
+
+        <div id="research-page" class="page-section">
+            <h2 class="section-title">Research</h2>
+            <p>Content coming soon...</p>
+        </div>
+        <div id="team-page" class="page-section"><h2 class="section-title">Team</h2></div>
+        <div id="news-page" class="page-section"><h2 class="section-title">News</h2></div>
+        <div id="resources-page" class="page-section"><h2 class="section-title">Resources</h2></div>
+        <div id="contact-page" class="page-section"><h2 class="section-title">Contact</h2></div>
 
     </div>
 
@@ -256,5 +292,25 @@
         <p>&copy; 2026 Bingjie Dang</p>
     </footer>
 
+    <script>
+        function switchTab(pageId) {
+            // 1. 隐藏所有页面内容
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // 2. 取消所有按钮的高亮状态
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // 3. 显示目标页面
+            document.getElementById(pageId).classList.add('active');
+
+            // 4. 高亮被点击的按钮
+            event.target.classList.add('active');
+            
+            // 5. 将页面滚回顶部
+            window.scrollTo(0, 0);
+        }
+    </script>
 </body>
 </html>
