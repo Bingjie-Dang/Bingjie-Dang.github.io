@@ -1,104 +1,142 @@
-/* 基础配色 */
+/* Google Sites 极简风格 */
 :root {
-    --bg-color: #f8f9fa;       /* 极浅灰蓝色背景 */
-    --nav-bg: #d2b4a0;        /* 截图中的浅棕色导航栏 */
-    --text-main: #333333;
-    --accent-color: #1a73e8;  /* 链接蓝 */
+    --bg-light-gray: #f8f9fa; /* 浅灰色背景 */
+    --text-dark: #202124;     /* 谷歌标准深灰字体 */
+    --nav-bg: #d2b4a0;        /* 截图中的肤色/浅棕色顶栏 */
+    --link-color: #1a73e8;    /* 谷歌经典蓝链接 */
 }
 
 body {
     margin: 0;
-    font-family: "Open Sans", Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-light-gray);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
 /* 导航栏 */
 header {
     background-color: var(--nav-bg);
-    padding: 0 10%;
-    height: 50px;
-    display: flex;
-    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-.nav-container {
-    width: 100%;
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
 }
 
-.site-title {
-    font-size: 1.2rem;
-    font-weight: 500;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.nav-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
-    margin-left: 20px;
+    color: #000;
     font-size: 0.85rem;
     font-weight: 500;
+    margin-left: 20px;
 }
 
-nav a.active {
-    border-bottom: 3px solid #000;
-    padding-bottom: 12px;
+nav a:hover {
+    text-decoration: underline;
 }
 
-/* 布局容器 */
-.container {
-    max-width: 1000px;
-    margin: 40px auto;
-    background-color: #ffffff; /* 主内容区白色，形成对比 */
-    padding: 50px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+/* Banner 区域 */
+.banner {
+    width: 100%;
+    height: 300px;
+    background: url('banner.jpg') center/cover no-repeat;
+    /* 如果你想让 banner 看起来更像 Google sites 的平铺风格，可以取消固定效果 */
 }
 
-/* 个人介绍 */
-.profile-flex {
+/* 主体内容白板 */
+.main-content {
+    max-width: 960px;
+    margin: -30px auto 40px auto; /* 让内容块稍微上浮覆盖在 banner 边缘，很经典的现代网页设计 */
+    background-color: #ffffff;
+    padding: 40px 60px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 极简阴影 */
+}
+
+/* 个人介绍排版 */
+.profile-section {
     display: flex;
     gap: 40px;
-    align-items: center;
-    margin-bottom: 30px;
+    align-items: flex-start;
+    margin-bottom: 50px;
 }
 
-.profile-img {
-    width: 200px;
-    height: auto;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.profile-image-large {
+    width: 180px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-h1 { font-size: 1.8rem; margin: 0 0 15px 0; }
-.bio-line { margin: 5px 0; font-size: 1.05rem; color: #666; }
+.profile-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+}
 
-/* 论文列表 */
-.section-divider { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
-.section-title { font-size: 1.4rem; font-weight: 600; margin-bottom: 25px; }
+.profile-text li {
+    margin-bottom: 8px;
+}
 
-ol li {
+.profile-text a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+/* 论文列表排版 */
+.publications-section h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 1px solid #dadce0;
+    padding-bottom: 10px;
+    margin-top: 40px;
     margin-bottom: 20px;
-    font-size: 0.95rem;
-    color: #333;
-    padding-left: 10px;
 }
 
-strong { color: #000; }
-em { font-weight: 600; font-style: normal; } /* 模拟截图中的加粗期刊名 */
+.pub-list {
+    padding-left: 20px;
+}
+
+.pub-list li {
+    margin-bottom: 18px;
+    font-size: 1rem;
+    color: #3c4043;
+    text-align: justify;
+}
 
 footer {
     text-align: center;
-    padding: 30px;
-    color: #888;
-    font-size: 0.85rem;
-}
-
-@media (max-width: 768px) {
-    .profile-flex { flex-direction: column; text-align: center; }
-    .container { padding: 20px; }
+    padding: 20px;
+    color: #5f6368;
+    font-size: 0.9rem;
 }
