@@ -4,36 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bingjie Dang</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 强制覆盖为浅色主题 - 完美复刻 Google Sites */
+        :root {
+            --bg-light-gray: #f8f9fa; /* 浅灰底色 */
+            --text-dark: #202124;     /* 黑色/深灰字体 */
+            --nav-bg: #d2b4a0;        /* 顶部导航栏浅棕色 */
+            --link-color: #1a73e8;    /* 蓝色链接 */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-light-gray); /* 浅色背景生效 */
+            color: var(--text-dark); /* 黑色字体生效 */
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        header {
+            background-color: var(--nav-bg);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            padding: 15px 10%;
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-title { 
+            font-weight: bold; 
+            font-size: 1.2rem; 
+            margin-right: 40px; 
+            color: #000;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            margin-right: 20px;
+            font-size: 0.9rem;
+        }
+        
+        nav a:hover { text-decoration: underline; }
+
+        /* 主内容白板 */
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            background-color: #ffffff; /* 白底黑字的内容区 */
+            padding: 50px 60px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* 个人资料排版 */
+        .profile-section {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+        
+        .profile-img { 
+            width: 180px; 
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15); 
+        }
+        
+        .profile-info ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            font-size: 1.1rem; 
+        }
+        
+        .profile-info li { margin-bottom: 8px; }
+        
+        .profile-info a { 
+            color: var(--link-color); 
+            text-decoration: none; 
+        }
+
+        /* 论文列表排版 */
+        .publications h2 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-bottom: 1px solid #dadce0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        
+        .pub-list { padding-left: 20px; }
+        
+        .pub-list li { 
+            margin-bottom: 18px; 
+            font-size: 1rem; 
+            color: #333; 
+            text-align: justify; 
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 20px; 
+            color: #5f6368; 
+            font-size: 0.9rem; 
+        }
+    </style>
 </head>
 <body>
-
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="profile.jpeg" alt="Avatar" class="nav-avatar"> 
-                <span>Bingjie Dang</span>
-            </div>
-            <nav>
-                <a href="#home">HOME</a>
-                <a href="#research">RESEARCH <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
-                <a href="#publications">PUBLICATIONS</a>
-                <a href="#team">TEAM</a>
-                <a href="#news">NEWS</a>
-                <a href="#resources">RESOURCES</a>
-                <a href="#contact">CONTACT</a>
-            </nav>
-        </div>
+        <div class="header-title">Bingjie Dang</div>
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#research">RESEARCH</a>
+            <a href="#publications">PUBLICATIONS</a>
+            <a href="#team">TEAM</a>
+            <a href="#news">NEWS</a>
+            <a href="#resources">RESOURCES</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
     </header>
 
-    <div class="banner"></div>
-
-    <main class="main-content">
-        
+    <div class="container">
         <section class="profile-section" id="home">
-            <img src="profile.jpeg" alt="Dr. Bingjie Dang" class="profile-image-large">
-            <div class="profile-text">
+            <img src="profile.jpeg" alt="Dr. Bingjie Dang" class="profile-img">
+            <div class="profile-info">
                 <ul>
                     <li><strong>Dr. Bingjie Dang</strong></li>
                     <li><em><strong>Research Fellow</strong></em></li>
@@ -41,42 +136,24 @@
                     <li><strong>National University of Singapore</strong></li>
                     <li><strong>Email:</strong> <a href="mailto:bing.joe@nus.edu.sg">bing.joe@nus.edu.sg</a></li>
                 </ul>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-linkedin" style="color: #0077b5;"></i></a>
-                    <a href="mailto:bing.joe@nus.edu.sg"><i class="fas fa-envelope" style="color: #ea4335;"></i></a>
-                </div>
             </div>
         </section>
 
-        <section class="publications-section" id="publications">
+        <section class="publications" id="publications">
             <h2>Selected current articles:</h2>
             <ol class="pub-list">
-                <li>
-                    Tao Zeng‡, Zhongran Liu‡, Youdi Gu‡, <strong>Bingjie Dang‡</strong>, Yuan Gao, Tianlong Xu, Peng Li, Shu Shi, Kaixuan Sun, Yao Zhu, Xiao Gong, He Tian, & Jingsheng Chen. "A Nitride Based Non-Volatile Memory Enabled by Electric-Field-Induced Phase Transition," <em>Nature Materials</em>, 2026 (Accepted). ‡Equal contributions
-                </li>
-                <li>
-                    <strong>Bingjie Dang</strong>, Teng Zhang, Fanqi Meng, Keqin Liu, Liutao Yu, Qinghua Zhang, Si Wu, Lin Gu, Ru Huang, Yuchao Yang. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em> 9, 213–224, 2026.
-                </li>
-                <li>
-                    <strong>Bingjie Dang</strong>, Kaixuan Sun, Hanxin Su, Jiaxin Chen, Pengyu Yao, Tao Zeng, Shu Shi, Guowei Zhou, Liang Liu, Xiaohong Xu, Jingsheng Chen, "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.
-                </li>
-                <li>
-                    <strong>Bingjie Dang</strong>, Teng Zhang, Keqin Liu, Ru Huang, Yuchao Yang, "Reconfigurable Optic In-Sensor Processing Based on a Multi-Phototransistors-One-Memristor Array," <em>Nature Electronics</em> 7(11), 991–1003, 2024.
-                </li>
-                <li>
-                    Xulei Wu‡, <strong>Bingjie Dang‡</strong>, Teng Zhang, Xiulong Wu, Yuchao Yang, "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons," <em>Science Advances</em> 10,  2024, eadl2767 . ‡Equal contributions
-                </li>
-                <li>
-                    <strong>Bingjie Dang</strong>, Keqin Liu, xulei wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang, "One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing," <em>Advanced Materials</em>, 2022, 2204844, (doi:10.1002/adma.202204844).
-                </li>
+                <li>Tao Zeng‡, Zhongran Liu‡, Youdi Gu‡, <strong>Bingjie Dang‡</strong>, Yuan Gao, Tianlong Xu, Peng Li, Shu Shi, Kaixuan Sun, Yao Zhu, Xiao Gong, He Tian, & Jingsheng Chen. "A Nitride Based Non-Volatile Memory Enabled by Electric-Field-Induced Phase Transition," <em>Nature Materials</em>, 2026 (Accepted). <strong>‡Equal contributions</strong></li>
+                <li><strong>Bingjie Dang</strong>, Teng Zhang, Fanqi Meng, Keqin Liu, Liutao Yu, Qinghua Zhang, Si Wu, Lin Gu, Ru Huang, Yuchao Yang. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em> 9, 213–224, 2026.</li>
+                <li><strong>Bingjie Dang</strong>, Kaixuan Sun, Hanxin Su, Jiaxin Chen, Pengyu Yao, Tao Zeng, Shu Shi, Guowei Zhou, Liang Liu, Xiaohong Xu, Jingsheng Chen, "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.</li>
+                <li><strong>Bingjie Dang</strong>, Teng Zhang, Keqin Liu, Ru Huang, Yuchao Yang, "Reconfigurable Optic In-Sensor Processing Based on a Multi-Phototransistors-One-Memristor Array," <em>Nature Electronics</em> 7(11), 991–1003, 2024.</li>
+                <li>Xulei Wu‡, <strong>Bingjie Dang‡</strong>, Teng Zhang, Xiulong Wu, Yuchao Yang, "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons," <em>Science Advances</em> 10, 2024, eadl2767. <strong>‡Equal contributions</strong></li>
+                <li><strong>Bingjie Dang</strong>, Keqin Liu, xulei wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang, "One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing," <em>Advanced Materials</em>, 2022, 2204844, (doi:10.1002/adma.202204844).</li>
             </ol>
         </section>
-        
-    </main>
+    </div>
 
     <footer>
         <p>&copy; 2026 Bingjie Dang</p>
     </footer>
-
 </body>
 </html>
