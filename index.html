@@ -3,75 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bingjie Dang - Home</title>
+    <title>Bingjie Dang</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <header>
-        <div class="nav-container">
-            <div class="site-title">Bingjie Dang</div>
+        <div class="header-container">
+            <div class="logo">
+                <img src="profile.jpeg" alt="Avatar" class="nav-avatar"> 
+                <span>Bingjie Dang</span>
+            </div>
             <nav>
-                <a href="#home" class="active">HOME</a>
-                <a href="#research">RESEARCH</a>
+                <a href="#home">HOME</a>
+                <a href="#research">RESEARCH <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                 <a href="#publications">PUBLICATIONS</a>
                 <a href="#team">TEAM</a>
                 <a href="#news">NEWS</a>
                 <a href="#resources">RESOURCES</a>
                 <a href="#contact">CONTACT</a>
-                <i class="fas fa-search search-icon"></i>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section class="profile-header" id="home">
-            <div class="profile-flex">
-                <img src="profile.jpeg" alt="Dr. Bingjie Dang" class="profile-img">
-                <div class="profile-text">
-                    <h1>Dr. Bingjie Dang (党冰洁)</h1>
-                    <p class="bio-line">Research Fellow at <strong>National University of Singapore (NUS)</strong></p>
-                    <p class="bio-line">PhD from <strong>Peking University (PKU)</strong></p>
-                    <p class="bio-line">Expert in <em>Neuromorphic Computing & Ferroelectric Devices</em></p>
-                    <div class="quick-links">
-                        <a href="mailto:bing.joe@nus.edu.sg">Email</a> | 
-                        <a href="https://github.com/bingjiedang" target="_blank">GitHub</a>
-                    </div>
+    <div class="banner"></div>
+
+    <main class="main-content">
+        
+        <section class="profile-section" id="home">
+            <img src="profile.jpeg" alt="Dr. Bingjie Dang" class="profile-image-large">
+            <div class="profile-text">
+                <ul>
+                    <li><strong>Dr. Bingjie Dang</strong></li>
+                    <li><em><strong>Research Fellow</strong></em></li>
+                    <li><strong>College of Design and Engineering,</strong></li>
+                    <li><strong>National University of Singapore</strong></li>
+                    <li><strong>Email:</strong> <a href="mailto:bing.joe@nus.edu.sg">bing.joe@nus.edu.sg</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin" style="color: #0077b5;"></i></a>
+                    <a href="mailto:bing.joe@nus.edu.sg"><i class="fas fa-envelope" style="color: #ea4335;"></i></a>
                 </div>
             </div>
         </section>
 
-        <hr class="section-divider">
-
-        <section id="publications">
-            <h2 class="section-title">Selected Research Articles</h2>
-            <div class="publication-list">
-                <ol>
-                    <li>
-                        Tao Zeng‡, Zhongran Liu‡, Youdi Gu‡, <strong>Bingjie Dang‡</strong>, Yuan Gao, Tianlong Xu, Peng Li, Shu Shi, Kaixuan Sun, Yao Zhu, Xiao Gong, He Tian, & Jingsheng Chen. "A Nitride Based Non-Volatile Memory Enabled by Electric-Field-Induced Phase Transition," <em>Nature Materials</em>, 2026 (Accepted). <strong>‡Equal contributions</strong>
-                    </li>
-                    <li>
-                        <strong>Bingjie Dang</strong>, Teng Zhang, Fanqi Meng, Keqin Liu, Liutao Yu, Qinghua Zhang, Si Wu, Lin Gu, Ru Huang, Yuchao Yang. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em> 9, 213–224, 2026.
-                    </li>
-                    <li>
-                        <strong>Bingjie Dang</strong>, Kaixuan Sun, Hanxin Su, Jiaxin Chen, Pengyu Yao, Tao Zeng, Shu Shi, Guowei Zhou, Liang Liu, Xiaohong Xu, Jingsheng Chen, "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.
-                    </li>
-                    <li>
-                        <strong>Bingjie Dang</strong>, Teng Zhang, Keqin Liu, Ru Huang, Yuchao Yang, "Reconfigurable Optic In-Sensor Processing Based on a Multi-Phototransistors-One-Memristor Array," <em>Nature Electronics</em> 7(11), 991–1003, 2024.
-                    </li>
-                    <li>
-                        Xulei Wu‡, <strong>Bingjie Dang‡</strong>, Teng Zhang, Xiulong Wu, Yuchao Yang, "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons," <em>Science Advances</em> 10, 2024, eadl2767. <strong>‡Equal contributions</strong>
-                    </li>
-                    <li>
-                        <strong>Bingjie Dang</strong>, Keqin Liu, xulei wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang, "One-phototransistor-one-memristor Array with High-linearity Light-tunable Weight for Optic Neuromorphic Computing," <em>Advanced Materials</em>, 2022, 2204844, (doi:10.1002/adma.202204844).
-                    </li>
-                </ol>
-            </div>
+        <section class="publications-section" id="publications">
+            <h2>Selected current articles:</h2>
+            <ol class="pub-list">
+                <li>
+                    Tao Zeng‡, Zhongran Liu‡, Youdi Gu‡, <strong>Bingjie Dang‡</strong>, Yuan Gao, Tianlong Xu, Peng Li, Shu Shi, Kaixuan Sun, Yao Zhu, Xiao Gong, He Tian, & Jingsheng Chen. "A Nitride Based Non-Volatile Memory Enabled by Electric-Field-Induced Phase Transition," <em>Nature Materials</em>, 2026 (Accepted). ‡Equal contributions
+                </li>
+                <li>
+                    <strong>Bingjie Dang</strong>, Teng Zhang, Fanqi Meng, Keqin Liu, Liutao Yu, Qinghua Zhang, Si Wu, Lin Gu, Ru Huang, Yuchao Yang. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em> 9, 213–224, 2026.
+                </li>
+                <li>
+                    <strong>Bingjie Dang</strong>, Kaixuan Sun, Hanxin Su, Jiaxin Chen, Pengyu Yao, Tao Zeng, Shu Shi, Guowei Zhou, Liang Liu, Xiaohong Xu, Jingsheng Chen, "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.
+                </li>
+                <li>
+                    <strong>Bingjie Dang</strong>, Teng Zhang, Keqin Liu, Ru Huang, Yuchao Yang, "Reconfigurable Optic In-Sensor Processing Based on a Multi-Phototransistors-One-Memristor Array," <em>Nature Electronics</em> 7(11), 991–1003, 2024.
+                </li>
+                <li>
+                    Xulei Wu‡, <strong>Bingjie Dang‡</strong>, Teng Zhang, Xiulong Wu, Yuchao Yang, "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons," <em>Science Advances</em> 10,  2024, eadl2767 . ‡Equal contributions
+                </li>
+                <li>
+                    <strong>Bingjie Dang</strong>, Keqin Liu, xulei wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang, "One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing," <em>Advanced Materials</em>, 2022, 2204844, (doi:10.1002/adma.202204844).
+                </li>
+            </ol>
         </section>
+        
     </main>
 
     <footer>
-        <p>&copy; 2026 Bingjie Dang. All Rights Reserved.</p>
+        <p>&copy; 2026 Bingjie Dang</p>
     </footer>
+
 </body>
 </html>
