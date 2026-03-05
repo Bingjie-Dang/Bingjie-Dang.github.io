@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bingjie Dang - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* ================= 基础颜色与排版 ================= */
         :root {
-            --bg-color: #f0f2f5;     /* 稍微加深一点的灰白背景，让白色内容区和白色粒子更显层次 */
-            --content-bg: #ffffff;   /* 内容区纯白 */
-            --text-color: #202124;   /* 黑灰字体 */
-            --header-bg: #dcbca1;    /* 匹配截图的浅棕色顶栏 */
-            --button-hover: #c9a588; /* 按钮悬浮变深 */
-            --link-blue: #1a73e8;    /* 链接蓝色 */
+            --bg-color: #f0f2f5;
+            --content-bg: #ffffff;
+            --text-color: #202124;
+            --header-bg: #dcbca1;
+            --button-hover: #c9a588;
+            --link-blue: #1a73e8;
         }
 
         body {
@@ -25,17 +26,17 @@
             position: relative;
         }
 
-        /* ================= 动态粒子/神经网络背景 ================= */
+        /* ================= 动态背景 ================= */
         #particles-js {
             position: fixed;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            z-index: -1; /* 固定在最底层 */
+            z-index: -1;
         }
 
-        /* ================= 顶部导航与按钮 ================= */
+        /* ================= 顶部导航 ================= */
         header {
             background-color: var(--header-bg);
             padding: 15px 5%;
@@ -54,10 +55,7 @@
             margin-right: auto;
         }
 
-        nav {
-            display: flex;
-            gap: 10px;
-        }
+        nav { display: flex; gap: 10px; }
 
         .nav-btn {
             background: none;
@@ -86,15 +84,15 @@
 
         /* ================= 主内容区域 ================= */
         .container {
-            position: relative; /* 确保层级在粒子之上 */
+            position: relative;
             z-index: 1;
             max-width: 1000px;
             margin: 40px auto;
             background-color: var(--content-bg);
             padding: 60px 80px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* 增加一点阴影让悬浮感更强 */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             min-height: 70vh;
-            border-radius: 8px; /* 微微的圆角更现代 */
+            border-radius: 8px;
         }
 
         .page-section {
@@ -102,34 +100,72 @@
             animation: fadeIn 0.4s ease-in-out;
         }
 
-        .page-section.active {
-            display: block;
-        }
+        .page-section.active { display: block; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ================= HOME 页面排版 ================= */
+        /* ================= HOME 页面：三列排版 ================= */
         .profile-section {
             display: flex;
-            gap: 50px;
+            gap: 40px;
             align-items: center;
             margin-bottom: 60px;
         }
 
+        /* 左侧照片 */
         .profile-img {
             width: 220px;
             height: 220px;
             object-fit: cover;
-            border-radius: 50%;
+            border-radius: 50%; /* 保持你要求的圆形 */
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .profile-text { font-size: 1.15rem; }
-        .profile-text p { margin: 8px 0; }
+        /* 中间文字 (带有方形列表符) */
+        .profile-text {
+            flex: 1; /* 撑满剩余空间，把图标挤到最右边 */
+            font-size: 1.15rem;
+        }
+
+        .profile-text ul {
+            list-style-type: square; /* 方形黑点 */
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .profile-text li {
+            margin-bottom: 12px;
+            padding-left: 5px;
+        }
+
         .profile-text a { color: var(--link-blue); text-decoration: none; }
+
+        /* 右侧图标 */
+        .social-icons {
+            display: flex;
+            flex-direction: column; /* 垂直排列 */
+            gap: 25px;
+            align-items: center;
+            padding-right: 10px;
+        }
+
+        .social-icons a {
+            font-size: 2.2rem; /* 图标大小 */
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.15); /* 悬停轻微放大 */
+        }
+
+        /* 图标具体颜色 (还原截图中的官方品牌色) */
+        .fa-linkedin { color: #0077b5; }
+        .fa-envelope { color: #ea4335; } /* Gmail 红色 */
+        .fa-github { color: #24292e; }
 
         /* ================= 文献列表排版 ================= */
         .section-title {
@@ -167,14 +203,7 @@
 
         .pub-list em { font-style: italic; font-weight: 600; }
 
-        footer { 
-            text-align: center; 
-            padding: 30px; 
-            color: #666; 
-            font-size: 0.9rem; 
-            position: relative;
-            z-index: 1;
-        }
+        footer { text-align: center; padding: 30px; color: #666; font-size: 0.9rem; position: relative; z-index: 1;}
     </style>
 </head>
 <body>
@@ -200,12 +229,21 @@
             
             <section class="profile-section">
                 <img src="profile.jpeg" alt="Dr. Bingjie Dang" class="profile-img">
+                
                 <div class="profile-text">
-                    <p><strong>Dr. Bingjie Dang</strong></p>
-                    <p><em><strong>Research Fellow</strong></em></p>
-                    <p><strong>College of Design and Engineering,</strong></p>
-                    <p><strong>National University of Singapore</strong></p>
-                    <p><strong>Email:</strong> <a href="mailto:bing.joe@nus.edu.sg">bing.joe@nus.edu.sg</a></p>
+                    <ul>
+                        <li><strong>Dr. Bingjie Dang</strong></li>
+                        <li><em><strong>Research Fellow</strong></em></li>
+                        <li><strong>College of Design and Engineering,</strong></li>
+                        <li><strong>National University of Singapore</strong></li>
+                        <li><strong>Email:</strong> <a href="mailto:bing.joe@nus.edu.sg">bing.joe@nus.edu.sg</a></li>
+                    </ul>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/bingjie-dang-745994314/?originalSubdomain=hk" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:bingjiedang@gmail.com" title="Gmail"><i class="fas fa-envelope"></i></a>
+                    <a href="https://bingjie-dang.github.io/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </section>
 
@@ -216,8 +254,8 @@
                     <li><strong>Bingjie Dang</strong>, Teng Zhang, Fanqi Meng, Keqin Liu, Liutao Yu, Qinghua Zhang, Si Wu, Lin Gu, Ru Huang, Yuchao Yang. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em> 9, 213–224, 2026.</li>
                     <li><strong>Bingjie Dang</strong>, Kaixuan Sun, Hanxin Su, Jiaxin Chen, Pengyu Yao, Tao Zeng, Shu Shi, Guowei Zhou, Liang Liu, Xiaohong Xu and Jingsheng Chen, "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.</li>
                     <li><strong>Bingjie Dang</strong>, Teng Zhang, Keqin Liu, Ru Huang, and Yuchao Yang, “Reconfigurable Optic In-Sensor Processing Based on a Multi-Phototransistors-One-Memristor Array,” <em>Nature Electronics</em> 7(11), 991–1003, 2024.</li>
-                    <li>Xulei Wu‡, <strong>Bingjie Dang‡</strong>, Teng Zhang, Xiulong Wu, Yuchao Yang, "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons,” <em>Science Advances</em> 10, 2024, eadl2767. <strong>‡Equal contributions</strong></li>
-                    <li><strong>Bingjie Dang</strong>, Keqin Liu, xulei wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang, "One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing," <em>Advanced Materials</em>, 2022, 2204844, (doi:10.1002/adma.202204844)</li>
+                    <li>Xulei Wu‡, <strong>Bingjie Dang‡</strong>, Teng Zhang, Xiulong Wu, Yuchao Yang, Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons, <em>Science Advances</em> 10, 2024, eadl2767. <strong>‡Equal contributions</strong></li>
+                    <li><strong>Bingjie Dang</strong>, Keqin Liu, xulei wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang, "One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing," <em>Adv. Mater.</em>, 2022, 2204844, (doi:10.1002/adma.202204844)</li>
                 </ol>
             </section>
         </div>
@@ -247,7 +285,7 @@
 
             <div class="year-title">2023</div>
             <ol class="pub-list">
-                <li><strong>Bingjie Dang</strong>, Keqin Liu, Xulei Wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang，One-Phototransistor–One-Memristor Array with High-Linearity Light-Tunable Weight for Optic Neuromorphic Computing，<em>Advanced Materials</em> 37. 2023. 2370262.</li>
+                <li><strong>Bingjie Dang</strong>, Keqin Liu, Xulei Wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang，One-Phototransistor–One-Memristor Array with High-Linearity Light-Tunable Weight for Optic Neuromorphic Computing，<em>Adv. Mater.</em> 37. 2023. 2370262.</li>
                 <li>Zhen Yang, Teng Zhang, Keqin Liu, <strong>Bingjie Dang</strong>, Liying Xu, Yuchao Yang, Ru Huang, Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion-Modulated Memtransistors, <em>Advanced Intelligent Systems</em> 5, 2023, 2300026.</li>
             </ol>
 
@@ -301,39 +339,32 @@
         <div id="news-page" class="page-section"><h2 class="section-title">News</h2></div>
         <div id="resources-page" class="page-section"><h2 class="section-title">Resources</h2></div>
         <div id="contact-page" class="page-section"><h2 class="section-title">Contact</h2></div>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // 初始化神经网络粒子效果
         particlesJS('particles-js', {
             "particles": {
                 "number": { "value": 70 },
-                "color": { "value": "#888888" }, // 浅灰色粒子
+                "color": { "value": "#888888" },
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.4 },
                 "size": { "value": 3 },
                 "line_linked": {
                     "enable": true,
                     "distance": 160,
-                    "color": "#888888", // 浅灰色连线
+                    "color": "#888888",
                     "opacity": 0.3,
                     "width": 1.5
                 },
                 "move": { "enable": true, "speed": 1.5 }
             },
             "interactivity": {
-                "events": {
-                    "onhover": { "enable": true, "mode": "grab" } // 鼠标悬浮时抓取连线，体现神经网络特性
-                },
-                "modes": {
-                    "grab": { "distance": 180, "line_linked": { "opacity": 0.6 } }
-                }
+                "events": { "onhover": { "enable": true, "mode": "grab" } },
+                "modes": { "grab": { "distance": 180, "line_linked": { "opacity": 0.6 } } }
             }
         });
 
-        // 页面切换逻辑
         function switchTab(pageId) {
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(section => section.classList.remove('active'));
@@ -343,7 +374,7 @@
 
             document.getElementById(pageId).classList.add('active');
             event.target.classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'}); // 切换时平滑回到顶部
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
 </body>
