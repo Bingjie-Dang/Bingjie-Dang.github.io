@@ -225,3 +225,78 @@ table {
         padding-left: 18px;
     }
 }
+
+/* ================= 汉堡菜单响应式样式 ================= */
+
+/* 默认隐藏手机端菜单图标 */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--accent-dark);
+    cursor: pointer;
+    padding: 5px;
+}
+
+@media (max-width: 900px) {
+    header {
+        justify-content: space-between;
+        padding: 10px 5%;
+    }
+
+    .menu-toggle {
+        display: block; /* 手机端显示图标 */
+        order: 2;
+    }
+
+    .site-title {
+        order: 1;
+    }
+
+    /* 手机端导航栏变为垂直下拉列表 */
+    nav {
+        display: none; /* 默认隐藏 */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+    }
+
+    /* 当激活时显示导航栏 */
+    nav.show {
+        display: flex;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: left;
+        padding: 15px 25px;
+        border-radius: 0;
+    }
+
+    .nav-btn.active {
+        border-bottom: none;
+        border-left: 4px solid var(--link-blue);
+        background-color: var(--button-hover);
+    }
+
+    /* 语言切换按钮在手机端的间距调整 */
+    .lang-switch-btn {
+        margin: 10px 25px;
+        width: fit-content;
+    }
+
+    /* 下拉菜单在手机端的适配 */
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #f9fafb;
+        padding-left: 20px;
+        display: block; /* 手机端直接展开更方便使用 */
+    }
+}
