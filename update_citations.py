@@ -1,25 +1,26 @@
 from scholarly import scholarly
-from scholarly import ProxyGenerator
 import json
+from pathlib import Path
 
-pg = ProxyGenerator()
-pg.FreeProxies()
-scholarly.use_proxy(pg)
+author_id = "Mfp83rUAAAAJ"
 
-author = scholarly.search_author_id("Mfp83rUAAAAJ")
+author = scholarly.search_author_id(author_id)
 author = scholarly.fill(author, sections=['publications'])
 
-data = []
-
-for pub in author['publications']:
-    pub = scholarly.fill(pub)
-    title = pub['bib']['title']
-    citations = pub.get('num_citations', 0)
-
-    data.append({
-        "title": title,
-        "citations": citations
+items = []
+for pub in author.get('publications', []):
+    try:
+        full = scholarly.fill(pub)
+    except Exception:
+        full = pub
+    title = full.get('bib', {}).get('title', '').strip()
+    if not title:
+        continue
+    items.append({
+        'title': title,
+        'citations': int(full.get('num_citations', 0) or 0)
     })
 
-with open("citations.json", "w") as f:
-    json.dump(data, f, indent=2)
+items.sort(key=lambda x: x['title'].lower())
+Path('citations.json').write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding='utf-8')
+print(f'updated {len(items)} records')
