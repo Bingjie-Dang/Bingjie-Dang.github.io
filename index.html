@@ -979,15 +979,15 @@
             async src="//gc.zgo.at/count.js"></script>
 
     <script>
-        /* ================= Google Scholar Citation Loader (Extreme Fuzzy Matching) ================= */
+        /* ================= Google Scholar Citation Loader (AI Bag-of-Words Smart Matching) ================= */
         const EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY';
         const EMAILJS_SERVICE_ID = 'YOUR_EMAILJS_SERVICE_ID';
         const EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
         const CONTACT_RECEIVER_EMAIL = 'bingjiegang@gmail.com';
 
-        // 终极暴力清洗：去掉所有空格、标点符号、特殊符号，只保留纯小写字母和数字
-        function normalizeTitle(text) {
-            return (text || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        // 智能洗词器：只保留纯字母数字，并拆分成长度大于2的有效单词数组
+        function getWords(text) {
+            return (text || '').toLowerCase().replace(/[^a-z0-9]/g, ' ').split(/\s+/).filter(w => w.length > 2);
         }
 
         function createCitationBadge() {
@@ -1015,26 +1015,39 @@
                 if (!response.ok) throw new Error('citations.json not found');
                 const data = await response.json();
                 
-                // 清洗抓取到的 Scholar 标题
-                const citationList = (Array.isArray(data) ? data : []).map(item => ({
-                    cleanTitle: normalizeTitle(item.title || ''),
-                    count: Number(item.citations || 0)
-                })).filter(item => item.cleanTitle.length > 5); // 过滤掉异常空数据
+                const citationList = Array.isArray(data) ? data : [];
 
                 publicationItems.forEach(li => {
                     const badge = li.querySelector('.citation-badge');
-                    // 获取当前网页中整个 <li> 的纯字母文本（包含作者、标题、期刊等所有内容）
-                    const liText = normalizeTitle(li.innerText);
+                    // 提取当前 HTML 那一行文字里的所有有效单词
+                    const liWords = getWords(li.innerText);
                     
-                    let finalCount = 0;
+                    let bestMatch = null;
+                    let maxOverlap = 0;
+
                     for (const scholarItem of citationList) {
-                        // 核心逻辑：只要 Scholar 返回的纯字母串被包含在你的 HTML 纯字母串中，就算匹配成功！
-                        // 这样即使 Scholar 截断了标题（有省略号），也绝不会错过
-                        if (liText.includes(scholarItem.cleanTitle)) {
-                            finalCount = scholarItem.count;
-                            break; 
+                        // 提取 Scholar 标题里的所有有效单词
+                        const scholarWords = getWords(scholarItem.title);
+                        if (scholarWords.length === 0) continue;
+                        
+                        let overlap = 0;
+                        // 检查 Scholar 标题的词在 HTML 那一行里命中了多少个
+                        for (const w of scholarWords) {
+                            if (liWords.includes(w)) overlap++;
+                        }
+                        
+                        // 计算重合率
+                        const matchRatio = overlap / scholarWords.length;
+                        
+                        // 只要 Scholar 标题里超过 50% 的词在这行 HTML 里出现过，且是当前最高匹配度
+                        if (matchRatio > 0.5 && matchRatio > maxOverlap) {
+                            maxOverlap = matchRatio;
+                            bestMatch = scholarItem;
                         }
                     }
+                    
+                    // 获取最终匹配成功的引用量，如果没匹配上则是 0
+                    const finalCount = bestMatch ? Number(bestMatch.citations || 0) : 0;
                     
                     badge.classList.remove('error', 'loading');
                     badge.innerHTML = `<span class="en">Citations: ${finalCount}</span><span class="zh">引用：${finalCount}</span>`;
