@@ -224,18 +224,56 @@
             color: #7a8699;
             border-color: #e5e7eb;
         }
-        .citation-badge.error {
-            background: #fff7ed;
-            color: #c2410c;
-            border-color: rgba(194, 65, 12, 0.15);
+        
+        /* === Scholar Stats Banner (Total Citations & H-index) === */
+        .scholar-stats-banner {
+            display: flex;
+            gap: 24px;
+            background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+            border: 1px solid rgba(26, 115, 232, 0.15);
+            padding: 16px 24px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.05);
         }
+        .scholar-stat-item {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .scholar-stat-label {
+            font-size: 0.95rem;
+            color: #5f6368;
+            font-weight: 600;
+        }
+        .scholar-stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+        }
+        .scholar-banner-link {
+            margin-left: auto;
+            font-size: 0.95rem;
+            color: var(--link-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #ffffff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(26, 115, 232, 0.2);
+            transition: all 0.2s ease;
+        }
+        .scholar-banner-link:hover {
+            background: var(--link-blue);
+            color: #ffffff;
+            border-color: var(--link-blue);
+        }
+
         .analytics-section { margin-top: 45px; }
-        .analytics-note {
-            font-size: 0.92rem;
-            color: #6b7280;
-            margin-top: -8px;
-            margin-bottom: 18px;
-        }
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -270,11 +308,6 @@
         .chart-card canvas {
             width: 100% !important;
             max-height: 340px;
-        }
-        .analytics-status {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #6b7280;
         }
         .contact-invite {
             font-size: 1.02rem;
@@ -359,6 +392,8 @@
         @media (max-width: 900px) {
             .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .contact-form-grid { grid-template-columns: 1fr; }
+            .scholar-stats-banner { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .scholar-banner-link { margin-left: 0; width: 100%; justify-content: center; }
         }
         @media (max-width: 720px) {
             .container { padding: 35px 22px; }
@@ -596,6 +631,21 @@
                 <span class="en">Full Publications List</span>
                 <span class="zh">发表论文</span>
             </h2>
+
+            <div class="scholar-stats-banner">
+                <div class="scholar-stat-item">
+                    <span class="scholar-stat-label"><span class="en">Total Citations:</span><span class="zh">总引用量:</span></span>
+                    <span class="scholar-stat-value" id="total-citations-display">-</span>
+                </div>
+                <div class="scholar-stat-item">
+                    <span class="scholar-stat-label"><span class="en">h-index:</span><span class="zh">h指数:</span></span>
+                    <span class="scholar-stat-value" id="h-index-display">-</span>
+                </div>
+                <a href="https://scholar.google.com/citations?user=Mfp83rUAAAAJ&hl=en" target="_blank" class="scholar-banner-link">
+                    <i class="fas fa-external-link-alt"></i> 
+                    <span class="en">View on Google Scholar</span><span class="zh">在 Google Scholar 查看</span>
+                </a>
+            </div>
             
             <div class="year-title">2026</div>
             <ol class="pub-list">
@@ -979,7 +1029,7 @@
             async src="//gc.zgo.at/count.js"></script>
 
     <script>
-        /* ================= Google Scholar Citation Loader (AI Bag-of-Words Smart Matching) ================= */
+        /* ================= Google Scholar Citation Loader (AI Bag-of-Words Smart Matching & Stats) ================= */
         const EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY';
         const EMAILJS_SERVICE_ID = 'YOUR_EMAILJS_SERVICE_ID';
         const EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
@@ -1015,39 +1065,50 @@
                 if (!response.ok) throw new Error('citations.json not found');
                 const data = await response.json();
                 
-                const citationList = Array.isArray(data) ? data : [];
+                // 【核心更新】：兼容旧版的数组格式，以及新版的包含 stats 的对象格式
+                let citationList = [];
+                if (Array.isArray(data)) {
+                    citationList = data; // 旧格式
+                } else if (data.articles) {
+                    citationList = data.articles; // 新格式
+                    // 填入 Total Citations 和 H-index
+                    if (data.stats) {
+                        document.getElementById('total-citations-display').innerText = data.stats.total_citations || '-';
+                        document.getElementById('h-index-display').innerText = data.stats.h_index || '-';
+                    }
+                }
+
+                const cleanedCitationList = citationList.map(item => ({
+                    cleanTitle: (item.title || '').toLowerCase().replace(/[^a-z0-9]/g, ''),
+                    title: item.title,
+                    count: Number(item.citations || 0)
+                })).filter(item => item.cleanTitle.length > 5);
 
                 publicationItems.forEach(li => {
                     const badge = li.querySelector('.citation-badge');
-                    // 提取当前 HTML 那一行文字里的所有有效单词
                     const liWords = getWords(li.innerText);
                     
                     let bestMatch = null;
                     let maxOverlap = 0;
 
-                    for (const scholarItem of citationList) {
-                        // 提取 Scholar 标题里的所有有效单词
+                    for (const scholarItem of cleanedCitationList) {
                         const scholarWords = getWords(scholarItem.title);
                         if (scholarWords.length === 0) continue;
                         
                         let overlap = 0;
-                        // 检查 Scholar 标题的词在 HTML 那一行里命中了多少个
                         for (const w of scholarWords) {
                             if (liWords.includes(w)) overlap++;
                         }
                         
-                        // 计算重合率
                         const matchRatio = overlap / scholarWords.length;
                         
-                        // 只要 Scholar 标题里超过 50% 的词在这行 HTML 里出现过，且是当前最高匹配度
                         if (matchRatio > 0.5 && matchRatio > maxOverlap) {
                             maxOverlap = matchRatio;
                             bestMatch = scholarItem;
                         }
                     }
                     
-                    // 获取最终匹配成功的引用量，如果没匹配上则是 0
-                    const finalCount = bestMatch ? Number(bestMatch.citations || 0) : 0;
+                    const finalCount = bestMatch ? Number(bestMatch.count || 0) : 0;
                     
                     badge.classList.remove('error', 'loading');
                     badge.innerHTML = `<span class="en">Citations: ${finalCount}</span><span class="zh">引用：${finalCount}</span>`;
