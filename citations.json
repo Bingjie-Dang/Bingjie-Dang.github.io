@@ -78,5 +78,57 @@
   {
     "title": "Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion‐Modulated Memtransistors",
     "citations": 15
+  },
+  {
+    "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
+    "citations": 15
+  },
+  {
+    "title": "A distributed nanocluster based multi-agent evolutionary network",
+    "citations": 14
+  },
+  {
+    "title": "Highly Uniform Two‐Terminal Artificial Synapses Based on Polycrystalline Hf0.5Zr0.5O2 for Sparsified Back Propagation Networks",
+    "citations": 13
+  },
+  {
+    "title": "Physically Transient Diode with Ultrathin Tunneling layer as Selector for Bipolar One Diode-One Resistor Memory",
+    "citations": 10
+  },
+  {
+    "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
+    "citations": 7
+  },
+  {
+    "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
+    "citations": 5
+  },
+  {
+    "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
+    "citations": 4
+  },
+  {
+    "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
+    "citations": 3
+  },
+  {
+    "title": "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing",
+    "citations": 2
+  },
+  {
+    "title": "Hf1-xZrxO2based bipolar selector with high uniformity and high selectivity for large-scale integration of memristor crossbars",
+    "citations": 2
+  },
+  {
+    "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
+    "citations": 1
+  },
+  {
+    "title": "One‐Phototransistor–One‐Memristor Array with High‐Linearity Light‐Tunable Weight for Optic Neuromorphic Computing (Adv. Mater. 37/2023)",
+    "citations": 1
+  },
+  {
+    "title": "Secure Electronics: Physically Transient Threshold Switching Device Based on Magnesium Oxide for Security Application (Small 27/2018)",
+    "citations": null
   }
 ]
