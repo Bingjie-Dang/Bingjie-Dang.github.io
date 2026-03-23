@@ -1,142 +1,227 @@
-/* Google Sites 极简风格 */
-:root {
-    --bg-light-gray: #f8f9fa; /* 浅灰色背景 */
-    --text-dark: #202124;     /* 谷歌标准深灰字体 */
-    --nav-bg: #d2b4a0;        /* 截图中的肤色/浅棕色顶栏 */
-    --link-color: #1a73e8;    /* 谷歌经典蓝链接 */
+/* ================= 更完整的移动端适配 ================= */
+html, body {
+    overflow-x: hidden;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: var(--bg-light-gray);
-    color: var(--text-dark);
-    line-height: 1.6;
+* {
+    box-sizing: border-box;
 }
 
-/* 导航栏 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* header 在手机允许换行 */
 header {
-    background-color: var(--nav-bg);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
+/* 导航整体允许换行，避免挤爆 */
+nav {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
     align-items: center;
-    padding: 10px 20px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.nav-avatar {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-nav a {
-    text-decoration: none;
-    color: #000;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-left: 20px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Banner 区域 */
-.banner {
+    justify-content: flex-end;
     width: 100%;
-    height: 300px;
-    background: url('banner.jpg') center/cover no-repeat;
-    /* 如果你想让 banner 看起来更像 Google sites 的平铺风格，可以取消固定效果 */
 }
 
-/* 主体内容白板 */
-.main-content {
-    max-width: 960px;
-    margin: -30px auto 40px auto; /* 让内容块稍微上浮覆盖在 banner 边缘，很经典的现代网页设计 */
-    background-color: #ffffff;
-    padding: 40px 60px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 极简阴影 */
+.site-title {
+    margin-right: 0;
 }
 
-/* 个人介绍排版 */
-.profile-section {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    margin-bottom: 50px;
+/* 内容区域在平板/手机减小边距 */
+.container {
+    width: min(1000px, calc(100% - 24px));
+    margin: 20px auto;
+    padding: 32px 20px;
 }
 
-.profile-image-large {
-    width: 180px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+/* 研究区和个人信息区都允许更自然收缩 */
+.profile-section,
+.research-content {
+    flex-wrap: wrap;
 }
 
-.profile-text ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 15px 0;
-    font-size: 1.1rem;
+.profile-text,
+.research-text,
+.research-image-box {
+    min-width: 0;
 }
 
-.profile-text li {
-    margin-bottom: 8px;
+/* 表格在手机可横向滚动，避免被压坏 */
+.cv-table,
+table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
-.profile-text a {
-    color: var(--link-color);
-    text-decoration: none;
+/* 下拉菜单在手机不要靠 hover */
+@media (hover: none) and (pointer: coarse) {
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
 }
 
-.social-icons a {
-    font-size: 1.5rem;
-    margin-right: 15px;
-    text-decoration: none;
+/* ================= 平板 ================= */
+@media (max-width: 900px) {
+    header {
+        padding: 12px 16px;
+    }
+
+    .container {
+        padding: 28px 18px;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .research-text,
+    .research-image-box {
+        flex: 1 1 100%;
+    }
+
+    .nav-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
 }
 
-/* 论文列表排版 */
-.publications-section h2 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-bottom: 1px solid #dadce0;
-    padding-bottom: 10px;
-    margin-top: 40px;
-    margin-bottom: 20px;
+/* ================= 手机 ================= */
+@media (max-width: 720px) {
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+    .site-title {
+        width: 100%;
+        text-align: center;
+        font-size: 1.15rem;
+        margin-bottom: 4px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .nav-btn {
+        padding: 8px 10px;
+        font-size: 0.82rem;
+        border-radius: 999px;
+    }
+
+    .lang-switch-btn {
+        margin-left: 0;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .container {
+        width: calc(100% - 16px);
+        margin: 12px auto;
+        padding: 20px 14px;
+        border-radius: 10px;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .social-icons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        padding-right: 0;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .year-title {
+        font-size: 1rem;
+        padding: 4px 10px;
+    }
+
+    .profile-text,
+    .research-text,
+    .contact-invite,
+    .pub-list li,
+    .cv-table,
+    .cv-table td,
+    .cv-table th {
+        font-size: 0.95rem;
+    }
+
+    .research-content {
+        gap: 18px;
+    }
+
+    .research-image-box {
+        min-width: 0;
+        padding: 24px 14px;
+    }
+
+    .scholar-stats-banner {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .scholar-stat-value {
+        font-size: 1.3rem;
+    }
+
+    .contact-card {
+        padding: 16px;
+    }
+
+    .contact-input,
+    .contact-textarea {
+        font-size: 16px; /* 防止 iPhone 自动放大 */
+    }
+
+    footer {
+        padding: 20px 12px;
+        font-size: 0.82rem;
+    }
 }
 
-.pub-list {
-    padding-left: 20px;
-}
+/* ================= 超小屏手机 ================= */
+@media (max-width: 480px) {
+    .container {
+        padding: 16px 12px;
+    }
 
-.pub-list li {
-    margin-bottom: 18px;
-    font-size: 1rem;
-    color: #3c4043;
-    text-align: justify;
-}
+    .nav-btn {
+        font-size: 0.76rem;
+        padding: 7px 9px;
+    }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #5f6368;
-    font-size: 0.9rem;
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .section-title {
+        font-size: 1.08rem;
+    }
+
+    .pub-list {
+        padding-left: 18px;
+    }
 }
