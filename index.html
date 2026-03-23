@@ -201,9 +201,94 @@
         .cv-subheading { color: var(--accent-dark); font-size: 1.25rem; font-weight: bold; margin-top: 35px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
 
         footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; position: relative; z-index: 1;}
+
+        /* ================= Citation badges & analytics ================= */
+        .pub-list li { position: relative; }
+        .citation-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: 10px;
+            margin-top: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            background: #eef4ff;
+            color: var(--link-blue);
+            border: 1px solid rgba(26, 115, 232, 0.18);
+            vertical-align: middle;
+        }
+        .citation-badge.loading {
+            background: #f5f7fb;
+            color: #7a8699;
+            border-color: #e5e7eb;
+        }
+        .citation-badge.error {
+            background: #fff7ed;
+            color: #c2410c;
+            border-color: rgba(194, 65, 12, 0.15);
+        }
+        .analytics-section { margin-top: 45px; }
+        .analytics-note {
+            font-size: 0.92rem;
+            color: #6b7280;
+            margin-top: -8px;
+            margin-bottom: 18px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+            border: 1px solid rgba(26,115,232,0.12);
+            border-radius: 14px;
+            padding: 18px 18px 16px;
+            box-shadow: 0 6px 18px rgba(26,115,232,0.06);
+        }
+        .stat-card .stat-label {
+            font-size: 0.9rem;
+            color: #5f6368;
+            margin-bottom: 8px;
+        }
+        .stat-card .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            line-height: 1.1;
+        }
+        .chart-card {
+            background: #fbfcfe;
+            border: 1px solid #edf1f7;
+            border-radius: 14px;
+            padding: 18px 18px 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+        }
+        .chart-card canvas {
+            width: 100% !important;
+            max-height: 340px;
+        }
+        .analytics-status {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        @media (max-width: 900px) {
+            .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 720px) {
+            .container { padding: 35px 22px; }
+            .profile-section { flex-direction: column; text-align: center; }
+            .social-icons { flex-direction: row; padding-right: 0; flex-wrap: wrap; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+
     </style>
 </head>
-<html lang="en">
 <body>
 
     <div id="particles-js"></div>
@@ -322,6 +407,42 @@
                     <li><strong>Bingjie Dang</strong>, Keqin Liu, xulei wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang, "One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing," <em>Advanced Materials</em>, 2204844, 2022.（Cover Article）</li>
                 </ol>
             </section>
+            <section class="analytics-section">
+                <h2 class="section-title">
+                    <span class="en">Website Analytics</span>
+                    <span class="zh">网站访问统计</span>
+                </h2>
+                <p class="analytics-note">
+                    <span class="en">This section updates automatically after GoatCounter is enabled. Replace <code>YOUR_GOATCOUNTER_CODE</code> in the script with your own site code.</span>
+                    <span class="zh">启用 GoatCounter 后，这一部分会自动更新。请先把脚本中的 <code>YOUR_GOATCOUNTER_CODE</code> 替换成你自己的站点代码。</span>
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label"><span class="en">Today</span><span class="zh">今日访问</span></div>
+                        <div class="stat-value" id="stat-today">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label"><span class="en">This Month</span><span class="zh">本月访问</span></div>
+                        <div class="stat-value" id="stat-month">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label"><span class="en">This Year</span><span class="zh">本年访问</span></div>
+                        <div class="stat-value" id="stat-year">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label"><span class="en">All Time</span><span class="zh">累计访问</span></div>
+                        <div class="stat-value" id="stat-total">--</div>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <canvas id="visitsChart"></canvas>
+                    <div id="analyticsStatus" class="analytics-status">
+                        <span class="en">Waiting for analytics data...</span>
+                        <span class="zh">正在等待统计数据...</span>
+                    </div>
+                </div>
+            </section>
+
         </div>
 
         <div id="memristor-page" class="page-section">
@@ -678,6 +799,7 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         // 初始化粒子特效
@@ -732,5 +854,281 @@
             }
         }
     </script>
+
+    <script data-goatcounter="https://YOUR_GOATCOUNTER_CODE.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+
+    <script>
+        /* ================= OpenAlex citation updater ================= */
+        const OPENALEX_MAILTO = 'bing.joe@nus.edu.sg';
+        const CITATION_CACHE_TTL = 1000 * 60 * 60 * 24 * 7;
+
+        const titleOverrides = [
+            {
+                match: 'Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons',
+                title: 'Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons'
+            },
+            {
+                match: 'Full van der Waals ambipolar ferroelectric configurable optical hetero-synapses for in-sensor computing',
+                title: 'Full van der Waals ambipolar ferroelectric configurable optical hetero-synapses for in-sensor computing'
+            },
+            {
+                match: 'Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes',
+                title: 'Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes'
+            },
+            {
+                match: 'Fully Hardware Memristive Neuromorphic Computing Enabled by the Integration of Trainable Dendritic Neurons and High-Density RRAM Chip',
+                title: 'Fully Hardware Memristive Neuromorphic Computing Enabled by the Integration of Trainable Dendritic Neurons and High-Density RRAM Chip'
+            },
+            {
+                match: 'One-Phototransistor–One-Memristor Array with High-Linearity Light-Tunable Weight for Optic Neuromorphic Computing',
+                title: 'One-Phototransistor-One-Memristor Array with High-Linearity Light-Tunable Weight for Optic Neuromorphic Computing'
+            },
+            {
+                match: 'Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion-Modulated Memtransistors',
+                title: 'Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion-Modulated Memtransistors'
+            },
+            {
+                match: 'An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing',
+                title: 'An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing'
+            }
+        ];
+
+        function normalizeTitle(text) {
+            return (text || '')
+                .replace(/[“”"]/g, '"')
+                .replace(/[‐‑–—]/g, '-')
+                .replace(/\s+/g, ' ')
+                .replace(/[，]/g, ',')
+                .trim();
+        }
+
+        function extractDoi(text) {
+            const doiMatch = text.match(/10\.\d{4,9}\/[-._;()/:A-Z0-9]+/i);
+            return doiMatch ? doiMatch[0].replace(/[).,;]+$/, '') : '';
+        }
+
+        function extractTitle(text) {
+            const cleaned = normalizeTitle(text);
+            const quoted = cleaned.match(/["“](.*?)["”]/);
+            if (quoted && quoted[1]) return quoted[1].trim();
+
+            for (const item of titleOverrides) {
+                if (cleaned.includes(item.match)) return item.title;
+            }
+            return '';
+        }
+
+        function getCitationCacheKey(meta) {
+            return 'citation:' + (meta.doi || meta.title || meta.raw).toLowerCase();
+        }
+
+        function readCitationCache(meta) {
+            try {
+                const raw = localStorage.getItem(getCitationCacheKey(meta));
+                if (!raw) return null;
+                const parsed = JSON.parse(raw);
+                if (Date.now() - parsed.ts > CITATION_CACHE_TTL) return null;
+                return parsed.value;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function writeCitationCache(meta, value) {
+            try {
+                localStorage.setItem(getCitationCacheKey(meta), JSON.stringify({ ts: Date.now(), value }));
+            } catch (e) {}
+        }
+
+        function createCitationBadge() {
+            const badge = document.createElement('span');
+            badge.className = 'citation-badge loading';
+            badge.innerHTML = '<span class="en">Citations: loading...</span><span class="zh">引用：加载中...</span>';
+            return badge;
+        }
+
+        async function fetchCitationCount(meta) {
+            const cached = readCitationCache(meta);
+            if (cached !== null) return cached;
+
+            let url = '';
+            if (meta.doi) {
+                url = `https://api.openalex.org/works/https://doi.org/${encodeURIComponent(meta.doi)}?mailto=${encodeURIComponent(OPENALEX_MAILTO)}`;
+                const res = await fetch(url);
+                if (res.ok) {
+                    const data = await res.json();
+                    writeCitationCache(meta, data.cited_by_count ?? 0);
+                    return data.cited_by_count ?? 0;
+                }
+            }
+
+            if (meta.title) {
+                url = `https://api.openalex.org/works?search=${encodeURIComponent(meta.title)}&per-page=5&mailto=${encodeURIComponent(OPENALEX_MAILTO)}`;
+                const res = await fetch(url);
+                if (res.ok) {
+                    const data = await res.json();
+                    const results = (data.results || []);
+                    const target = normalizeTitle(meta.title).toLowerCase();
+                    let best = results.find(item => normalizeTitle(item.display_name).toLowerCase() === target) || results[0];
+                    if (best) {
+                        writeCitationCache(meta, best.cited_by_count ?? 0);
+                        return best.cited_by_count ?? 0;
+                    }
+                }
+            }
+
+            throw new Error('Citation not found');
+        }
+
+        async function updatePublicationCitations() {
+            const publicationItems = [...document.querySelectorAll('.pub-list li')]
+                .filter(li => li.querySelector('em'));
+
+            for (const li of publicationItems) {
+                const raw = normalizeTitle(li.innerText);
+                const meta = {
+                    raw,
+                    doi: li.dataset.doi || extractDoi(raw),
+                    title: li.dataset.title || extractTitle(raw)
+                };
+
+                const badge = createCitationBadge();
+                li.appendChild(document.createElement('br'));
+                li.appendChild(badge);
+
+                try {
+                    const count = await fetchCitationCount(meta);
+                    badge.classList.remove('loading', 'error');
+                    badge.innerHTML = `<span class="en">Citations: ${count}</span><span class="zh">引用：${count}</span>`;
+                } catch (err) {
+                    badge.classList.remove('loading');
+                    badge.classList.add('error');
+                    badge.innerHTML = '<span class="en">Citations unavailable</span><span class="zh">引用暂不可用</span>';
+                }
+            }
+        }
+
+        /* ================= GoatCounter analytics ================= */
+        const GOATCOUNTER_CODE = 'YOUR_GOATCOUNTER_CODE';
+        const GOATCOUNTER_BASE = GOATCOUNTER_CODE === 'YOUR_GOATCOUNTER_CODE'
+            ? ''
+            : `https://${GOATCOUNTER_CODE}.goatcounter.com`;
+
+        let visitsChart = null;
+
+        function formatNumber(n) {
+            return new Intl.NumberFormat().format(Number(n || 0));
+        }
+
+        async function fetchGoatCounterCount(params = {}) {
+            if (!GOATCOUNTER_BASE) return null;
+            const url = new URL(`${GOATCOUNTER_BASE}/counter/TOTAL.json`);
+            Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
+            const res = await fetch(url.toString());
+            if (!res.ok) throw new Error('Counter request failed');
+            const data = await res.json();
+            const count = String(data.count || '0').replace(/,/g, '');
+            return Number(count);
+        }
+
+        function setAnalyticsStatus(type, enText, zhText) {
+            const box = document.getElementById('analyticsStatus');
+            box.innerHTML = `<span class="en">${enText}</span><span class="zh">${zhText}</span>`;
+            box.style.color = type === 'error' ? '#c2410c' : '#6b7280';
+        }
+
+        function upsertChart(labels, values) {
+            const ctx = document.getElementById('visitsChart');
+            if (!ctx) return;
+            if (visitsChart) visitsChart.destroy();
+
+            visitsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels,
+                    datasets: [{
+                        label: 'Visits',
+                        data: values,
+                        borderRadius: 8,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `Visits: ${formatNumber(context.raw)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) { return formatNumber(value); }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        async function updateAnalyticsDashboard() {
+            if (!GOATCOUNTER_BASE) {
+                setAnalyticsStatus(
+                    'info',
+                    'Set your GoatCounter code first to enable the counters and chart.',
+                    '请先填写 GoatCounter 站点代码，之后访问量卡片和统计图会自动生效。'
+                );
+                return;
+            }
+
+            try {
+                const now = new Date();
+                const today = now.toISOString().slice(0, 10);
+
+                const [todayCount, monthCount, yearCount, totalCount] = await Promise.all([
+                    fetchGoatCounterCount({ start: today }),
+                    fetchGoatCounterCount({ start: 'month' }),
+                    fetchGoatCounterCount({ start: 'year' }),
+                    fetchGoatCounterCount()
+                ]);
+
+                document.getElementById('stat-today').textContent = formatNumber(todayCount);
+                document.getElementById('stat-month').textContent = formatNumber(monthCount);
+                document.getElementById('stat-year').textContent = formatNumber(yearCount);
+                document.getElementById('stat-total').textContent = formatNumber(totalCount);
+
+                upsertChart(
+                    ['Today', 'Month', 'Year', 'Total'],
+                    [todayCount, monthCount, yearCount, totalCount]
+                );
+
+                setAnalyticsStatus(
+                    'info',
+                    'Counters and chart updated automatically from GoatCounter.',
+                    '访问量卡片与统计图已从 GoatCounter 自动更新。'
+                );
+            } catch (err) {
+                setAnalyticsStatus(
+                    'error',
+                    'Unable to load GoatCounter data. Check the site code and make sure public counters are enabled.',
+                    '无法读取 GoatCounter 数据，请检查站点代码，并确认已启用 public visitor counter。'
+                );
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updatePublicationCitations();
+            updateAnalyticsDashboard();
+        });
+    </script>
+
 </body>
 </html>
