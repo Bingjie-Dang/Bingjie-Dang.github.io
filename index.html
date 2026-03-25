@@ -25,7 +25,11 @@
             color: var(--text-color);
             line-height: 1.6;
             position: relative;
+            overflow-x: hidden; /* 移动端防溢出 */
         }
+
+        * { box-sizing: border-box; }
+        img { max-width: 100%; height: auto; }
 
         /* ================= 中英文显示控制引擎 ================= */
         html[lang="en"] .zh { display: none !important; }
@@ -43,6 +47,8 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .site-title {
@@ -53,7 +59,16 @@
             letter-spacing: 0.5px;
         }
 
-        nav { display: flex; gap: 8px; align-items: center; }
+        /* 新增：汉堡菜单图标（默认隐藏） */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--accent-dark);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        nav { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: flex-end; width: auto; }
 
         .nav-btn {
             background: none;
@@ -135,7 +150,7 @@
         .container {
             position: relative;
             z-index: 1;
-            max-width: 1000px;
+            width: min(1000px, calc(100% - 24px));
             margin: 40px auto;
             background-color: var(--content-bg);
             padding: 60px 80px;
@@ -152,9 +167,9 @@
         }
 
         /* ================= 排版通用样式 ================= */
-        .profile-section { display: flex; gap: 40px; align-items: center; margin-bottom: 40px; }
+        .profile-section { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 40px; }
         .profile-img { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
-        .profile-text { flex: 1; font-size: 1.15rem; color: #333; }
+        .profile-text { flex: 1; min-width: 0; font-size: 1.15rem; color: #333; }
         .profile-text ul { list-style-type: square; padding-left: 20px; margin: 0; }
         .profile-text li { margin-bottom: 12px; padding-left: 5px; }
         .profile-text a { color: var(--link-blue); text-decoration: none; font-weight: 500;}
@@ -187,15 +202,15 @@
         }
 
         .pub-list { padding-left: 25px; margin-left: 0; color: #444; }
-        .pub-list li { margin-bottom: 20px; font-size: 1rem; text-align: justify; padding-left: 5px; }
+        .pub-list li { margin-bottom: 20px; font-size: 1rem; text-align: justify; padding-left: 5px; position: relative; }
         .pub-list em { font-style: italic; font-weight: 600; color: #222; }
 
         .research-content { display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 40px; }
         .research-text { flex: 3; min-width: 300px; font-size: 1.05rem; text-align: justify; color: #444; line-height: 1.8; }
-        .research-image-box { flex: 2; min-width: 250px; background-color: #f8f9fa; border: 2px dashed #d1d5db; border-radius: 8px; padding: 40px 20px; text-align: center; color: #888; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .research-image-box { flex: 2; min-width: 0; background-color: #f8f9fa; border: 2px dashed #d1d5db; border-radius: 8px; padding: 40px 20px; text-align: center; color: #888; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .research-image-box img { max-width: 100%; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; }
 
-        .cv-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 0.95rem; }
+        .cv-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 0.95rem; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
         .cv-table th { background-color: var(--bg-color); text-align: left; padding: 12px 10px; border-bottom: 2px solid #dee2e6; color: var(--accent-dark); }
         .cv-table td { padding: 12px 10px; border-bottom: 1px solid #eee; vertical-align: top; color: #444; }
         .cv-subheading { color: var(--accent-dark); font-size: 1.25rem; font-weight: bold; margin-top: 35px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
@@ -203,74 +218,29 @@
         footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; position: relative; z-index: 1;}
 
         /* ================= Citation & ESI Badges ================= */
-        .pub-list li { position: relative; }
         .citation-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-left: 10px;
-            margin-top: 8px;
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            background: #eef4ff;
-            color: var(--link-blue);
-            border: 1px solid rgba(26, 115, 232, 0.18);
-            vertical-align: middle;
+            display: inline-flex; align-items: center; gap: 6px; margin-left: 10px; margin-top: 8px;
+            padding: 4px 10px; border-radius: 999px; font-size: 0.82rem; font-weight: 600;
+            background: #eef4ff; color: var(--link-blue); border: 1px solid rgba(26, 115, 232, 0.18); vertical-align: middle;
         }
-        .citation-badge.loading {
-            background: #f5f7fb;
-            color: #7a8699;
-            border-color: #e5e7eb;
-        }
+        .citation-badge.loading { background: #f5f7fb; color: #7a8699; border-color: #e5e7eb; }
 
+        /* 重点：ESI 标签样式 */
         .esi-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            margin-left: 6px;
-            text-transform: uppercase;
-            vertical-align: middle;
+            display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px;
+            border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-left: 6px;
+            text-transform: uppercase; vertical-align: middle;
         }
         .highly-cited { background-color: #f3e5f5; color: #7b1fa2; border: 1px solid #ce93d8; }
         .hot-paper { background-color: #ffebee; color: #d32f2f; border: 1px solid #ef9a9a; }
         .esi-badge i { font-size: 0.8rem; }
 
         /* === Scholar Stats Banner === */
-        .scholar-stats-banner {
-            display: flex;
-            gap: 24px;
-            background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
-            border: 1px solid rgba(26, 115, 232, 0.15);
-            padding: 16px 24px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            align-items: center;
-            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.05);
-        }
+        .scholar-stats-banner { display: flex; gap: 24px; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%); border: 1px solid rgba(26, 115, 232, 0.15); padding: 16px 24px; border-radius: 12px; margin-bottom: 25px; align-items: center; box-shadow: 0 4px 12px rgba(26, 115, 232, 0.05); }
         .scholar-stat-item { display: flex; align-items: baseline; gap: 8px; }
         .scholar-stat-label { font-size: 0.95rem; color: #5f6368; font-weight: 600; }
         .scholar-stat-value { font-size: 1.6rem; font-weight: 700; color: var(--accent-dark); }
-        .scholar-banner-link {
-            margin-left: auto;
-            font-size: 0.95rem;
-            color: var(--link-blue);
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: #ffffff;
-            padding: 6px 14px;
-            border-radius: 20px;
-            border: 1px solid rgba(26, 115, 232, 0.2);
-            transition: all 0.2s ease;
-        }
+        .scholar-banner-link { margin-left: auto; font-size: 0.95rem; color: var(--link-blue); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 6px; background: #ffffff; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(26, 115, 232, 0.2); transition: all 0.2s ease; }
         .scholar-banner-link:hover { background: var(--link-blue); color: #ffffff; border-color: var(--link-blue); }
 
         .contact-invite { font-size: 1.02rem; line-height: 1.8; color: #334155; margin: 10px 0 18px; }
@@ -279,35 +249,61 @@
         .contact-form-group { display: flex; flex-direction: column; gap: 8px; }
         .contact-form-group.full-width { grid-column: 1 / -1; }
         .contact-form-label { font-size: 0.95rem; font-weight: 600; color: #334155; }
-        .contact-input, .contact-textarea {
-            width: 100%; box-sizing: border-box; border: 1px solid #d9e2ef; border-radius: 10px;
-            padding: 12px 14px; font-size: 0.98rem; color: #1f2937; background: #fff;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
+        .contact-input, .contact-textarea { width: 100%; box-sizing: border-box; border: 1px solid #d9e2ef; border-radius: 10px; padding: 12px 14px; font-size: 0.98rem; color: #1f2937; background: #fff; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
         .contact-input:focus, .contact-textarea:focus { outline: none; border-color: #1a73e8; box-shadow: 0 0 0 3px rgba(26,115,232,0.12); }
         .contact-textarea { min-height: 150px; resize: vertical; }
-        .contact-submit {
-            display: inline-flex; align-items: center; justify-content: center; min-width: 160px;
-            padding: 12px 22px; border: none; border-radius: 999px;
-            background: linear-gradient(135deg, #1a73e8 0%, #0f5ec4 100%);
-            color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer;
-            box-shadow: 0 8px 18px rgba(26,115,232,0.2);
-        }
+        .contact-submit { display: inline-flex; align-items: center; justify-content: center; min-width: 160px; padding: 12px 22px; border: none; border-radius: 999px; background: linear-gradient(135deg, #1a73e8 0%, #0f5ec4 100%); color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; box-shadow: 0 8px 18px rgba(26,115,232,0.2); }
         .contact-submit:disabled { opacity: 0.7; cursor: not-allowed; }
         .contact-helper { margin-top: 12px; font-size: 0.92rem; color: #64748b; }
 
+        /* ================= 移动端适配 (Media Queries) ================= */
         @media (max-width: 900px) {
+            header { justify-content: space-between; padding: 10px 5%; }
+            .menu-toggle { display: block; order: 2; }
+            .site-title { order: 1; margin-right: 0; }
+            nav {
+                display: none; position: absolute; top: 100%; left: 0;
+                width: 100%; background-color: #ffffff; flex-direction: column;
+                gap: 0; box-shadow: 0 10px 15px rgba(0,0,0,0.1); padding: 10px 0;
+                border-top: 1px solid #eee;
+            }
+            nav.show { display: flex; }
+            .nav-btn { width: 100%; text-align: left; padding: 15px 25px; border-radius: 0; font-size: 0.9rem; }
+            .nav-btn.active { border-bottom: none; border-left: 4px solid var(--link-blue); background-color: var(--button-hover); }
+            .lang-switch-btn { margin: 10px 25px; width: fit-content; }
+            .dropdown-content { position: static; box-shadow: none; background-color: #f9fafb; padding-left: 20px; display: block; }
+            .container { padding: 28px 18px; }
+            .profile-img { width: 180px; height: 180px; }
+            .research-text, .research-image-box { flex: 1 1 100%; }
             .contact-form-grid { grid-template-columns: 1fr; }
             .scholar-stats-banner { flex-direction: column; align-items: flex-start; gap: 12px; }
             .scholar-banner-link { margin-left: 0; width: 100%; justify-content: center; }
         }
+
         @media (max-width: 720px) {
-            .container { padding: 35px 22px; }
-            .profile-section { flex-direction: column; text-align: center; }
-            .social-icons { flex-direction: row; padding-right: 0; flex-wrap: wrap; }
+            header { position: sticky; top: 0; }
+            .site-title { width: 100%; text-align: center; font-size: 1.15rem; margin-bottom: 4px; }
+            nav { justify-content: center; }
+            .container { width: calc(100% - 16px); margin: 12px auto; padding: 20px 14px; border-radius: 10px; }
+            .profile-section { flex-direction: column; text-align: center; gap: 20px; }
+            .profile-img { width: 140px; height: 140px; }
+            .social-icons { flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 14px; padding-right: 0; }
+            .section-title { font-size: 1.2rem; }
             .contact-card { padding: 18px; }
+            .contact-input, .contact-textarea { font-size: 16px; } /* 防止 iOS 缩放 */
         }
 
+        @media (max-width: 480px) {
+            .container { padding: 16px 12px; }
+            .nav-btn { font-size: 0.76rem; padding: 7px 9px; }
+            .profile-img { width: 120px; height: 120px; }
+            .section-title { font-size: 1.08rem; }
+            .pub-list { padding-left: 18px; }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .dropdown:hover .dropdown-content { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -319,7 +315,12 @@
             <span class="en">Bingjie Dang</span>
             <span class="zh">党丙杰</span>
         </div>
-        <nav>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav id="main-nav">
             <button class="nav-btn active" onclick="switchTab('home-page', this)">
                 <span class="en">HOME</span><span class="zh">首页</span>
             </button>
@@ -420,15 +421,15 @@
                     <span class="zh">代表作：</span>
                 </h2>
                 <ol class="pub-list">
-                    <li>Tao Zeng‡, Zhongran Liu‡, Youdi Gu‡, <strong>Bingjie Dang‡</strong>, et al. "A Nitride Based Non-Volatile Memory Enabled by Electric-Field-Induced Phase Transition," <em>Nature Materials</em>, 2026 (Accepted) <strong>‡Equal contributions</strong></li>
-                    <li><strong>Bingjie Dang</strong>, Teng Zhang, et al. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em> 9, 213–224, 2026.</li>
-                    <li><strong>Bingjie Dang</strong>, Kaixuan Sun, et al., "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.</li>
+                    <li>Tao Zeng‡, Zhongran Liu‡, Youdi Gu‡, <strong>Bingjie Dang‡</strong>, Yuan Gao, Tianlong Xu, Peng Li, Shu Shi, Kaixuan Sun, Yao Zhu, Xiao Gong, He Tian, & Jingsheng Chen. "A Nitride Based Non-Volatile Memory Enabled by Electric-Field-Induced Phase Transition," <em>Nature Materials</em>, 2026 (Accepted) <strong>‡Equal contributions</strong></li>
+                    <li><strong>Bingjie Dang</strong>, Teng Zhang, Fanqi Meng, Keqin Liu, Liutao Yu, Qinghua Zhang, Si Wu, Lin Gu, Ru Huang, Yuchao Yang. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em> 9, 213–224, 2026.</li>
+                    <li><strong>Bingjie Dang</strong>, Kaixuan Sun, Hanxin Su, Jiaxin Chen, Pengyu Yao, Tao Zeng, Shu Shi, Guowei Zhou, Liang Liu, Xiaohong Xu and Jingsheng Chen, "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.</li>
                     <li><strong>Bingjie Dang</strong>, Teng Zhang, Keqin Liu, Ru Huang, and Yuchao Yang, “Reconfigurable Optic In-Sensor Processing Based on a Multi-Phototransistors-One-Memristor Array,” <em>Nature Electronics</em> 7(11), 991–1003, 2024.
                         <span class="esi-badge highly-cited"><i class="fas fa-trophy"></i> <span class="en">Highly Cited Paper</span><span class="zh">高被引论文</span></span>
                         <span class="esi-badge hot-paper"><i class="fas fa-fire"></i> <span class="en">Hot Paper</span><span class="zh">热点论文</span></span>
                     </li>
-                    <li>Xulei Wu‡, <strong>Bingjie Dang‡</strong>, et al., Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons, <em>Science Advances</em> 10, 2024, eadl2767. <strong>‡Equal contributions</strong></li>
-                    <li><strong>Bingjie Dang</strong>, Keqin Liu, et al., "One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing," <em>Advanced Materials</em>, 2204844, 2022.（Cover Article）</li>
+                    <li>Xulei Wu‡, <strong>Bingjie Dang‡</strong>, Teng Zhang, Xiulong Wu, Yuchao Yang, Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons, <em>Science Advances</em> 10, 2024, eadl2767. <strong>‡Equal contributions</strong></li>
+                    <li><strong>Bingjie Dang</strong>, Keqin Liu, xulei wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang, "One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing," <em>Advanced Materials</em>, 2204844, 2022.（Cover Article）</li>
                 </ol>
             </section>
         </div>
@@ -466,11 +467,11 @@
                 <div class="research-text">
                     <div class="en">
                         <p>Ferroelectric materials, particularly HfO2-based thin films (like HZO) and novel nitrides, present a breakthrough for next-generation logic and memory devices. My work involves the growth, characterization, and integration of these materials into advanced device architectures.</p>
-                        <p>A key highlight of my recent research is the <strong>Electric-Field-Induced Phase Transition RAM (EPTRAM)</strong> based on 3D nitride materials, which provides exceptional thermal robustness and high-speed operation.</p>
+                        <p>A key highlight of my recent research is the <strong>Electric-Field-Induced Phase Transition RAM (EPTRAM)</strong> based on 3D nitride materials, which provides exceptional thermal robustness and high-speed operation. Furthermore, we have explored HZO/HSO superlattice ReFET arrays for highly stable and efficient non-volatile memory applications.</p>
                     </div>
                     <div class="zh">
                         <p>铁电材料，特别是基于二氧化铪的薄膜（如HZO）和新型氮化物，为下一代逻辑和存储器件带来了突破。我的工作涉及这些材料的生长、表征以及将其集成到先进的器件架构中。</p>
-                        <p>我近期研究的一个关键亮点是基于氮化物材料的<strong>电场诱导相变存储器 (EPTRAM)</strong>，它提供了卓越的热稳定性和高速运行能力。</p>
+                        <p>我近期研究的一个关键亮点是基于氮化物材料的<strong>电场诱导相变存储器 (EPTRAM)</strong>，它提供了卓越的热稳定性和高速运行能力。此外，我们还探索了用于高稳定性和高效非易失性存储器应用的 HZO/HSO 超晶格 ReFET 阵列。</p>
                     </div>
                 </div>
                 <div class="research-image-box">
@@ -490,11 +491,11 @@
                 <div class="research-text">
                     <div class="en">
                         <p>Bridging the gap between materials science and artificial intelligence, my work in neuromorphic computing focuses on designing brain-inspired hardware that can process spatiotemporal data (like vision and audio) with extreme energy efficiency.</p>
-                        <p>We have successfully developed hardware implementations of <strong>Spiking Neural Networks (SNNs)</strong> using hybrid memristor arrays featuring fatigue spike-timing-dependent plasticity (F-STDP).</p>
+                        <p>We have successfully developed hardware implementations of <strong>Spiking Neural Networks (SNNs)</strong> using hybrid memristor arrays featuring fatigue spike-timing-dependent plasticity (F-STDP). Additionally, our reconfigurable optic in-sensor processing architectures allow sensory devices to compute at the edge, drastically reducing data movement overhead.</p>
                     </div>
                     <div class="zh">
                         <p>作为材料科学与人工智能之间的桥梁，我在类脑计算领域的工作重点是设计受大脑启发的硬件系统，使其能够以极高的能效处理时空数据（如视觉和音频信号）。</p>
-                        <p>我们成功开发了基于混合忆阻器阵列的<strong>脉冲神经网络 (SNN)</strong> 硬件实现，该阵列具有疲劳脉冲时间依赖可塑性 (F-STDP) 特征。</p>
+                        <p>我们成功开发了基于混合忆阻器阵列的<strong>脉冲神经网络 (SNN)</strong> 硬件实现，该阵列具有疲劳脉冲时间依赖可塑性 (F-STDP) 特征。此外，我们可重构的光学传感器内处理架构允许传感设备在边缘进行计算，从而大幅降低了数据移动带来的功耗开销。</p>
                     </div>
                 </div>
                 <div class="research-image-box">
@@ -528,13 +529,13 @@
             
             <div class="year-title">2026</div>
             <ol class="pub-list">
-                <li><strong>Bingjie Dang</strong>, Teng Zhang, et al. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em> 9, 213–224, 2026.</li>
-                <li>Tao Zeng‡, Zhongran Liu‡, Youdi Gu‡, <strong>Bingjie Dang‡</strong>, et al. "A Nitride Based Non-Volatile Memory Enabled by Electric-Field-Induced Phase Transition," <em>Nature Materials</em>, 2026 (Accepted) <strong>‡Equal contributions</strong></li>
+                <li><strong>Bingjie Dang</strong>, Teng Zhang, Fanqi Meng, Keqin Liu, Liutao Yu, Qinghua Zhang, Si Wu, Lin Gu, Ru Huang, Yuchao Yang. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em> 9, 213–224, 2026.</li>
+                <li>Tao Zeng‡, Zhongran Liu‡, Youdi Gu‡, <strong>Bingjie Dang‡</strong>, Yuan Gao, Tianlong Xu, Peng Li, Shu Shi, Kaixuan Sun, Yao Zhu, Xiao Gong, He Tian, & Jingsheng Chen. "A Nitride Based Non-Volatile Memory Enabled by Electric-Field-Induced Phase Transition," <em>Nature Materials</em>, 2026 (Accepted) <strong>‡Equal contributions</strong></li>
             </ol>
 
             <div class="year-title">2025</div>
             <ol class="pub-list">
-                <li><strong>Bingjie Dang</strong>, Kaixuan Sun, et al., "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.</li>
+                <li><strong>Bingjie Dang</strong>, Kaixuan Sun, Hanxin Su, Jiaxin Chen, Pengyu Yao, Tao Zeng, Shu Shi, Guowei Zhou, Liang Liu, Xiaohong Xu and Jingsheng Chen, "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.</li>
             </ol>
 
             <div class="year-title">2024</div>
@@ -543,21 +544,61 @@
                     <span class="esi-badge highly-cited"><i class="fas fa-trophy"></i> <span class="en">Highly Cited Paper</span><span class="zh">高被引论文</span></span>
                     <span class="esi-badge hot-paper"><i class="fas fa-fire"></i> <span class="en">Hot Paper</span><span class="zh">热点论文</span></span>
                 </li>
-                <li>Jinxuan Bai, et al., Full van der Waals ambipolar ferroelectric configurable optical hetero-synapses for in-sensor computing. <em>Advanced Materials</em>, 2401060, 2024.</li>
-                <li>Xulei Wu‡, <strong>Bingjie Dang‡</strong>, et al., Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons, <em>Science Advances</em> 10, 2024, eadl2767. <strong>‡Equal contributions</strong></li>
+                <li>Jinxuan Bai, Dawei He, <strong>Bingjie Dang</strong>, Keqin Liu, Zhen Yang, Jiarong Wang, Xiaoxian Zhang, Yongsheng Wang, Yaoyu Tao, Yuchao Yang, Full van der Waals ambipolar ferroelectric configurable optical hetero-synapses for in-sensor computing. <em>Advanced Materials</em>, 2401060, 2024.</li>
+                <li>Keqin Liu, <strong>Bingjie Dang</strong>, Zhiyu Yang, Teng Zhang, Zhen Yang, Jinxuan Bai, Zelun Pan, Ru Huang, Yuchao Yang, Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes, <em>Science China Information Sciences</em> 67, 2024 (8), 1-10.</li>
+                <li>Xulei Wu‡, <strong>Bingjie Dang‡</strong>, Teng Zhang, Xiulong Wu, Yuchao Yang, Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons, <em>Science Advances</em> 10, 2024, eadl2767. <strong>‡Equal contributions</strong></li>
+                <li>Zhen Yang, Wenshuo Yue, Chang Liu, Yaoyu Tao, Pek Jun Tiw, Longhao Yan, Yuxiang Yang, Teng Zhang, <strong>Bingjie Dang</strong>, Keqin Liu, Xiaodong He, Yongqin Wu, Weihai Bu, Kai Zheng, Jin Kang, Ru Huang, Yuchao Yang, Fully Hardware memristive Neuromorphic Computing Enabled by the Integration of Trainable Dendritic Neurons and High-Density RRAM Chip. <em>Advanced Functional Materials</em>, 2024, 2405618.</li>
             </ol>
 
             <div class="year-title">2023</div>
             <ol class="pub-list">
-                <li><strong>Bingjie Dang</strong>, et al., One-Phototransistor–One-Memristor Array with High-Linearity Light-Tunable Weight for Optic Neuromorphic Computing，<em>Adv. Mater.</em> 37. 2023. 2370262.</li>
+                <li><strong>Bingjie Dang</strong>, Keqin Liu, Xulei Wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang，One-Phototransistor–One-Memristor Array with High-Linearity Light-Tunable Weight for Optic Neuromorphic Computing，<em>Adv. Mater.</em> 37. 2023. 2370262.</li>
+                <li>Zhen Yang, Teng Zhang, Keqin Liu, <strong>Bingjie Dang</strong>, Liying Xu, Yuchao Yang, Ru Huang, Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion-Modulated Memtransistors, <em>Advanced Intelligent Systems</em> 5, 2023, 2300026.</li>
             </ol>
 
             <div class="year-title">2022</div>
             <ol class="pub-list">
-                <li><strong>Bingjie Dang</strong>, et al., "One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing," <em>Adv. Mater.</em>, 2022, 2204844. <strong>Cover Article</strong></li>
-                <li><strong>Bingjie Dang</strong>, et al., "1-HEMT-1-Memristor with Hardware Encryptor for Privacy-Preserving Image Processing," <em>IEEE Electron Device Letters</em>, 2022.</li>
+                <li><strong>Bingjie Dang</strong>, Keqin Liu, xulei wu, Zhen Yang, Liying Xu, Yuchao Yang, Ru Huang, "One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing," <em>Adv. Mater.</em>, 2022, 2204844, (doi:10.1002/adma.202204844) <strong>Cover Article</strong></li>
+                <li>Caidie Cheng, Yanghao Wang, Liying Xu, Keqin Liu, <strong>Bingjie Dang</strong>, Yingming Lu, Xiaoqin Yan, Ru Huang, and Yuchao Yang. "Artificial Astrocyte Memristor with Recoverable Linearity for Neuromorphic Computing," <em>Advanced Electronic Materials</em>, 2100669, Sept. 2021. (doi: 10.1002/aelm.202100669)</li>
+                <li><strong>Bingjie Dang</strong>, Ling Lv, Hong Wang, Lei Cai, Bonan Yan, Keqin Liu, Liying Xu, Yue Hao, Ru Huang, Yuchao Yang, "1-HEMT-1-Memristor with Hardware Encryptor for Privacy-Preserving Image Processing," <em>IEEE Electron Device Letters</em>, 22, Jun. 2022, (doi: 10.1109/LED.2022.3182945)</li>
+                <li>Keqin Liu, <strong>Bingjie Dang</strong>, Teng Zhang, Zhen Yang, Lin Bao, Liying Xu, Caidie Cheng, Ru Huang, Yuchao Yang, "Multilayer Reservoir Computing Based on Ferroelectric α-In2Se3 for Hierarchical Information Processing," <em>Adv. Mater.</em>, 2022, 2108826, (doi:10.1002/adma.202108826)</li>
+                <li>Keqin Liu, Teng Zhang, <strong>Bingjie Dang</strong>, Lin Bao, Liying Xu, Caidie Cheng, Zhen Yang, Ru Huang & Yuchao Yang. An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing. <em>Nat Electron</em> 5, 761–773 (2022). https://doi.org/10.1038/s41928-022-00847-2</li>
+                <li>Liying Xu, Jiadi Zhu, Bing Chen, Zhen Yang, Keqin Liu, <strong>Bingjie Dang</strong>, Teng Zhang, Yuchao Yang & Ru Huang, "A distributed nanocluster based multi-agent evolutionary network," <em>Nat. Commun.</em> 13, 4698 (2022). (doi:10.1038/s41467-022-32497-5)</li>
             </ol>
 
+            <div class="year-title">2021</div>
+            <ol class="pub-list">
+                <li>Xulei Wu‡, <strong>Bingjie Dang‡</strong>, Hong Wang, Xiulong Xu, Yuchao Yang, "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network," <em>Adv. Intell. Syst.</em> 2021, 2100151. (doi: 10.1002/aisy.202100151). <strong>‡Equal contributions</strong></li>
+                <li>Saisai Wang, <strong>Bingjie Dang</strong>, Jing Sun, Momo Zhao, Mei Yang, Xiaohua Ma, Hong Wang, and Yue Hao, "Physically Transient Diode wiht ultrathin thunneling layer as selector for bipolar one diode-one resistor memory," <em>IEEE Electron Device Letter</em>, Vol. 41, no. 6, April. 2021. (doi:10.1109/LED.2021.3064081)</li>
+                <li>Caidie Cheng, Keqin Liu, <strong>Bingjie Dang</strong>, Living Xu, Zhen Yang, Xiaoqin Yan, Yuchao Yang, Ru Huang. "Hf1-xZrxO2based bipolar selector with high uniformity and high selectivity for large-scale integration of memristor crossbars," <em>EDTM</em>, 2021. (10.1109/EDTM50988.2021.9421007)</li>
+            </ol>
+
+            <div class="year-title">2020</div>
+            <ol class="pub-list">
+                <li><strong>Bingjie Dang</strong>, Lan Ma, Longhao Yan, Saisai Wang, Keqin Liu, Liying Xu, Caidie Cheng, Momo Zhao, Yuchao Yang, Hong Wang, Yue Hao and Ru Huang, "Physically Transient Optic-Neural Synapse for Secure In-Sensor Computing," <em>IEEE Electron Device Letter</em>, Vol. 40, no. 8, Oct. 2020. (doi:10.1109/LED.2020.3025791)</li>
+                <li>Quantan Wu‡, <strong>Bingjie Dang‡</strong>, Congyan Lu, Guangwei Xu, Guanhua Yang, Jiawei Wang, Xichen Chuai, Nianduan Lu, Di Geng, Hong Wang, and Ling Li, "Spike Encoding with Optic Sensory Neurons Enable a pulse Coupled Neural Network for Ultraviolet Image Segmentation," <em>Nano Letters</em>, Oct. 2020. (doi:10.1021/acs.nanolett.0c02892.). <strong>‡Equal contributions</strong></li>
+                <li>Saisai Wang, <strong>Bingjie Dang</strong>, Jing Sun, Fang Song, Momo Zhao, Mei Yang, Xiaohua Ma, Hong Wang, and Yue Hao, "Physically Transient Resistive Memory With Programmable Switching Behaviors in MgO-Mo Based Devices," <em>IEEE Electron Device Letter</em>, Vol. 41, no. 4, April. 2020. (doi:10.1109/LED.2020.2974967)</li>
+                <li>Saisai Wang, <strong>Bingjie Dang</strong>, Jing Sun, Momo Zhao, Mei Yang, Xiaohua Ma, Hong Wang, and Yue Hao, "Physically Transient W/ZnO/MgO/W Schottky Diode for Rectifying and Artificial Synapse," <em>IEEE Electron Device Letter</em>, Vol. 41, no. 6, June. 2020. (doi:10.1109/LED.2020.2974967)</li>
+                <li>Yingming Lu, Keqin Liu, Jingjing Yang, Jiadi Zhu, Teng Zhang, Caidie Cheng, <strong>Bingjie Dang</strong>, Liying Xu, Qianqian Huang, Yuchao Yang, and Ru Huang, "Highly Uniform Two-Terminal Artificial Synapses Based on Polycrystalline Hf0.5Zr0.5O2 for Sparsified Back Propagation Networks," <em>Advanced Electronic Materials</em>, Vol. 6, no. 8, July. 2020. (doi: 10.1002/aelm.202000204)</li>
+                <li>Jingjing Yang, Jiadi Zhu, <strong>Bingjie Dang</strong>, Teng Zhang, Qingxi Duan, Liying Xu, Keqin Liu, Zhiting Lin, Ru Huang, and Yuchao Yang. "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing," <em>SCTIC</em>, 2020. (doi: 10.1109/CSTIC49141.2020.9282508)</li>
+            </ol>
+
+            <div class="year-title">2019</div>
+            <ol class="pub-list">
+                <li><strong>Bingjie Dang</strong>, Quantan Wu, Jing Sun, Momo Zhao, Saisai Wang, Fang Song, Mei Yang, Xiaohua Ma, Hong Wang, and Yue Hao, "Physically Transient Memristor Synapse Based on Embedding Magnesium Nanolayer in Oxide for Security Neuromorphic Electronics," <em>IEEE Electron Device Letter</em>, Vol. 40, no. 8, Aug. 2019. (doi:10.1109/LED.2019.2921322) <strong>Cover Article</strong></li>
+                <li><strong>Bingjie Dang</strong>, Jing Sun, Teng Zhang, Saisai Wang, Momo Zhao, Keqin Liu, Liying Xu, Jiadi Zhu, Caidie Cheng, Lin Bao, Yuchao Yang, Hong Wang, Yue Hao, and Ru Huang, "Physically Transient True Random Number Generators Based on Paired Threshold Switches Enabling Monte Carlo Method Applications," <em>IEEE Electron Device Letter</em>, Vol. 40, no. 7, July. 2019. (doi:10.1109/LED.2019.2919914)</li>
+                <li><strong>Bingjie Dang</strong>, Keqin Liu, Jiadi Zhu, Liying Xu, Teng Zhang, Caidie Cheng, Hong Wang, Yuchao Yang, Yue Hao, and Ru Huang, "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing," <em>APL Materials</em> 7, 071114 (2019). (doi:10.1063/1.5109090)</li>
+                <li>Fang Song, Hong Wang, Jing Sun, <strong>Bingjie Dang</strong>, Haixia Gao, Mei Yang, Xiaohua Ma, and Yue Hao, "Solution-Processed Physically Transient Resistive Memory Based on Magnesium Oxide," <em>IEEE Electron Device Letter</em>, Vol. 40, no. 2, Feb. 2019. (doi:10.1109/LED.2018.2886380)</li>
+                <li>Jing Sun, Hong Wang, Zhan Wang, Fang Song, Qing Zhu, <strong>Bingjie Dang</strong>, Haixia Gao, Mei Yang, Xiaohua Ma, and Yue Hao, "Physically Transient Memristive Synapse With Short-Term Plasticity Based on Magnesium Oxide," <em>IEEE Electron Device Letter</em>, Vol. 40, no. 5, May. 2019. (doi:10.1109/LED.2019.2904752)</li>
+                <li>Quantan Wu, Guanhua Yang, Congyan Lu, Guangwei Xu; Jiawei Wang, <strong>Bingjie Dang</strong>, Yuxin Gong, Xuewen Shi, Xichen Chuai, Nianduan Lu, Di Geng, Hong Wang, Ling Li, and Ming Liu, "Room Temperature-Processed a-IGZO Schottky Diode for Rectifying Circuit and Bipolar 1D1R Crossbar Applications," <em>IEEE Transactions on Electron Devices</em>, Vol. 66, no. 9, Sept. 2019. (doi:10.1109/TED.2019.2928792)</li>
+            </ol>
+
+            <div class="year-title">2018</div>
+            <ol class="pub-list">
+                <li><strong>Bingjie Dang</strong>, Quantan Wu, Fang Song, Jing Sun, Mei Yang, Xiaohua Ma, Hong Wang, and Yue Hao, "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors," <em>Nanoscale</em>, 2018, 10, 20089-20095. (doi:10.1039/C8NR07442A)</li>
+                <li>Jing Sun, Hong Wang, Fang Song, Zhan Wang, <strong>Bingjie Dang</strong>, Haixia Gao, Mei Yang, Xiaohua Ma, and Yue Hao, "Physically Transient Threshold Switching Device Based on Magnesium Oxide for Security Application," <em>Small</em>, Vol. 14, no. 7, May. 2018. (doi: 10.1002/smll.201800945)</li>
+                <li>Jing Sun, Hong Wang, Fang Song, Zhan Wang, <strong>Bingjie Dang</strong>, Haixia Gao, Mei Yang, Xiaohua Ma, and Yue Hao, "Secure Electronics: Physically Transient Threshold Switching Device Based on Magnesium Oxide for Security Application," <em>Small</em>, 180094, May. 2018. (<strong>Cover</strong>, doi: 10.1002/smll.201870127105)</li>
+            </ol>
         </div>
 
         <div id="team-page" class="page-section">
@@ -578,6 +619,11 @@
                     <span class="en">Bingjie Dang</span>
                     <span class="zh">党丙杰</span>
                 </h3>
+                <p style="margin: 5px 0; color: #555; line-height: 1.6;">
+                    <span class="en">Department of Materials Science and Engineering,</span><span class="zh">材料科学与工程系，</span><br>
+                    <span class="en">College of Design and Engineering, National University of Singapore, Singapore, 119077, Singapore.</span><span class="zh">新加坡国立大学 设计与工程学院，邮编：119077</span><br>
+                    <strong class="en">Email:</strong><strong class="zh">邮箱：</strong> <a href="mailto:bing.joe@nus.edu.sg" style="color: var(--link-blue); text-decoration: none;">bing.joe@nus.edu.sg</a>
+                </p>
             </div>
 
             <div class="cv-subheading">
@@ -589,6 +635,8 @@
                     <tr>
                         <th style="width: 25%;"><span class="en">School</span><span class="zh">学校/机构</span></th>
                         <th style="width: 15%;"><span class="en">Position</span><span class="zh">学位/职位</span></th>
+                        <th style="width: 20%;"><span class="en">Major</span><span class="zh">专业方向</span></th>
+                        <th style="width: 25%;"><span class="en">Group</span><span class="zh">课题组</span></th>
                         <th style="width: 15%; white-space: nowrap;"><span class="en">Date</span><span class="zh">时间</span></th>
                     </tr>
                 </thead>
@@ -596,28 +644,123 @@
                     <tr>
                         <td><span class="en">National University of Singapore</span><span class="zh">新加坡国立大学</span></td>
                         <td><span class="en">Research Fellow</span><span class="zh">研究员 (博士后)</span></td>
+                        <td><span class="en">Neuromorphic computing</span><span class="zh">类脑计算</span></td>
+                        <td><span class="en">Prof. Jingsheng Chen</span><span class="zh">陈景升 教授</span></td>
                         <td>2024-Present</td>
                     </tr>
                     <tr>
                         <td><span class="en">Peking University</span><span class="zh">北京大学</span></td>
                         <td><span class="en">Ph.D.</span><span class="zh">博士</span></td>
+                        <td><span class="en">Microelectronics</span><span class="zh">微电子学</span></td>
+                        <td><span class="en">Prof. Yuchao Yang, Prof. Ru Huang</span><span class="zh">杨玉超 教授, 黄如 院士</span></td>
                         <td>2020-2024</td>
+                    </tr>
+                    <tr>
+                        <td><span class="en">Peking University</span><span class="zh">北京大学</span></td>
+                        <td><span class="en">Visiting Student</span><span class="zh">联培</span></td>
+                        <td><span class="en">Microelectronics</span><span class="zh">微电子学</span></td>
+                        <td><span class="en">Prof. Yuchao Yang, Prof. Ru Huang</span><span class="zh">杨玉超 教授, 黄如 院士</span></td>
+                        <td>2018-2020</td>
+                    </tr>
+                    <tr>
+                        <td><span class="en">Xidian University</span><span class="zh">西安电子科技大学</span></td>
+                        <td><span class="en">S.M.</span><span class="zh">硕士</span></td>
+                        <td><span class="en">Materials</span><span class="zh">材料学</span></td>
+                        <td><span class="en">Prof. Hong Wang, Prof. Yue Hao</span><span class="zh">王宏 教授, 郝跃 院士</span></td>
+                        <td>2017-2020</td>
+                    </tr>
+                    <tr>
+                        <td><span class="en">Northwest University</span><span class="zh">西北大学</span></td>
+                        <td><span class="en">B.S.</span><span class="zh">学士</span></td>
+                        <td><span class="en">Microelectronics</span><span class="zh">微电子学</span></td>
+                        <td></td>
+                        <td>2013-2017</td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="cv-subheading">
-                <span class="en">2. Selected Publications</span>
-                <span class="zh">2. 代表性论文</span>
+                <span class="en">2. Research Interest</span>
+                <span class="zh">2. 研究兴趣</span>
+            </div>
+            <p style="text-align: justify; margin-bottom: 30px; padding-left: 5px; color: #444;">
+                <span class="en">Dr. Bingjie Dang’s research focuses on nanoelectronics (memory, and transistor), nanofabrication and integrated process (novel nanodevices co-integration with CMOS technology during BEOL process) and neuromorphic computing hardware system. He has published more than 34 papers in high-impact journals and conferences in <em>Nature Electronics</em>, <em>Nature Materials</em>, <em>Science Advances</em>, <em>Advanced Materials</em>, etc.</span>
+                <span class="zh">党丙杰博士的研究主要集中在纳米电子学（存储器与晶体管）、纳米制造与集成工艺（在BEOL后道工艺中将新型纳米器件与CMOS技术协同集成）以及类脑计算硬件系统。他已在 <em>Nature Electronics</em>、<em>Nature Materials</em>、<em>Science Advances</em>、<em>Advanced Materials</em> 等高影响力期刊和国际顶级会议上发表了超过 34 篇学术论文。</span>
+            </p>
+
+            <div class="cv-subheading">
+                <span class="en">3. Current Awards</span>
+                <span class="zh">3. 所获荣誉</span>
+            </div>
+            <ul style="list-style-type: square; padding-left: 25px; margin-bottom: 30px; color: #444;">
+                <li style="margin-bottom: 8px;">
+                    <span class="en">Promising Qingyuan Scholar Award，1/10, The Global Artificial Intelligence Technology Conference (GAITC)，Chinese Association for Artificial Intelligence (CAAI), China. (2025)</span>
+                    <span class="zh">中国人工智能学会全球人工智能技术大会 (GAITC) - 潜力清源学者(1/10), 2025</span>
+                </li>
+            </ul>
+
+            <div class="cv-subheading">
+                <span class="en">4. Selected Publications</span>
+                <span class="zh">4. 代表性论文</span>
             </div>
             <ol class="pub-list" style="margin-bottom: 30px;">
-                <li><strong>Bingjie Dang</strong>, et al. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em>, 2026.</li>
-                <li><strong>Bingjie Dang</strong>, et al. "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, 2025.</li>
+                <li><strong>Bingjie Dang</strong>, Teng Zhang, Fanqi Meng, et al. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em>, 2026. (doi:10.1038/s41928-025-01554-4).</li>
+                <li><strong>Bingjie Dang</strong>, Kaixuan Sun, Hanxin Su, et al. "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.</li>
                 <li><strong>Bingjie Dang</strong>, Teng Zhang, Keqin Liu, et al., “Reconfigurable Optic In-Sensor Processing Based on a Multi-Phototransistors-One-Memristor Array,” <em>Nature Electronics</em> 7(11), 991–1003, 2024.
                     <span class="esi-badge highly-cited"><i class="fas fa-trophy"></i> <span class="en">Highly Cited</span><span class="zh">高被引</span></span>
                     <span class="esi-badge hot-paper"><i class="fas fa-fire"></i> <span class="en">Hot Paper</span><span class="zh">热点</span></span>
                 </li>
+                <li>Xulei Wu‡, <strong>Bingjie Dang‡</strong>, Teng Zhang, et al., Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons, <em>Science Advances</em> 10, 2024, eadl2767. <strong>‡Equal contributions.</strong></li>
+                <li><strong>Bingjie Dang</strong>, Keqin Liu, Xulei Wu, et al., “One-phototransistor-one-memristor Array with High-linearityLight-tunable Weight for Optic Neuromorphic Computing,” <em>Advanced Materials</em>, 2204844 (2022). <strong>Cover Article.</strong></li>
+                <li><strong>Bingjie Dang</strong>, Ling Lv, Hong Wang, et al., "1-HEMT-1-Memristor with Hardware Encryptor for Privacy-Preserving Image Processing," <em>IEEE Electron Device Letters</em> 43, 1223-1226 (2022).</li>
+                <li>Xulei Wu†, <strong>Bingjie Dang†</strong>, Hong Wang, et al., "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network," <em>Advanced Intelligent System</em> 4, 2100151, (2021). <strong>†Equal contributions.</strong></li>
+                <li>Quantan Wu†, <strong>Bingjie Dang†</strong>, Congyan Lu, et al., "Spike Encoding with Optic Sensory Neurons Enable a pulse Coupled Neural Network for Ultraviolet Image Segmentation," <em>Nano Letters</em> 20, 8015-8023(2020). <strong>†Equal contributions.</strong></li>
+                <li><strong>Bingjie Dang</strong>, Lan Ma, Longhao Yan, et al., "Physically Transient Optic-Neural Synapse for Secure In-Sensor Computing," <em>IEEE Electron Device Letters</em> 41, 1641-1644, (2020).</li>
+                <li><strong>Bingjie Dang</strong>, Quantan Wu, Jing Sun, et al., "Physically Transient Memristor Synapse Based on Embedding Magnesium Nanolayer in Oxide for Security Neuromorphic Electronics," <em>IEEE Electron Device Letters</em> 40, 1265-1268 (2019). <strong>Cover Article.</strong></li>
+                <li><strong>Bingjie Dang</strong>, Keqin Liu, Jiadi Zhu, et al., “Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing” <em>APL Materials</em> 7, 071114 (2019).</li>
+                <li><strong>Bingjie Dang</strong>, Jing Sun, Teng Zhang, et al., “Physically transient true random number generators based on paired threshold switches enabling monte carlo method applications” <em>IEEE Electron Device Letters</em> 40, 1096-1099 (2019). <strong>Cover Article.</strong></li>
+                <li><strong>Bingjie Dang</strong>, Quantan Wu, Fang Song, et al., “A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors,” <em>Nanoscale</em> 10, 20089-20095, (2018).</li>
             </ol>
+
+            <div class="cv-subheading">
+                <span class="en">5. Invited Talks</span>
+                <span class="zh">5. 受邀报告</span>
+            </div>
+            <ol class="pub-list" style="margin-bottom: 30px;">
+                <li><strong>Bingjie Dang</strong>, “Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array,” The Global Artificial Intelligence Technology Conference (GAITC), China, 2025. <strong>(Invited Talks)</strong>.</li>
+                <li><strong>Bingjie Dang</strong>, “In-sensor computing based on optic sensory memristors,” The 14th International Young Scholars Forum of Sun Yat-sen University, Shen Zhen, China, Jun. 2023. <strong>(Invited Talks)</strong>.</li>
+                <li><strong>Bingjie Dang</strong>, “One-phototransistor-one-memristor Array with High-linearity Light-tunable Weight for Optic Neuromorphic Computing,” 2022 China Microelectronics PhD Forum, Beijing, China, Dec. 2022. <strong>(Invited Talks)</strong>.</li>
+                <li><strong>Bingjie Dang</strong>, “Optic Neuromorphic Computing Based on Memristors,” The 7th International Forum for HUASHAN Scholars, Xi’an, China, Nov. 2022. <strong>(Invited Talks)</strong>.</li>
+            </ol>
+
+            <div class="cv-subheading">
+                <span class="en">6. Professional Service</span>
+                <span class="zh">6. 学术服务 (审稿人)</span>
+            </div>
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; margin-bottom: 30px; color: #444;">
+                <tbody>
+                    <tr>
+                        <td style="padding: 10px 5px; border-bottom: 1px dashed #eee;"><strong>Reviewer:</strong> <em>Nature Electronics</em></td>
+                        <td style="padding: 10px 5px; text-align: right; border-bottom: 1px dashed #eee; color: #777;">2024-Present</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 5px; border-bottom: 1px dashed #eee;"><strong>Reviewer:</strong> <em>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems</em></td>
+                        <td style="padding: 10px 5px; text-align: right; border-bottom: 1px dashed #eee; color: #777;">2024-Present</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 5px; border-bottom: 1px dashed #eee;"><strong>Reviewer:</strong> <em>International Journal of Electronics and Communications</em></td>
+                        <td style="padding: 10px 5px; text-align: right; border-bottom: 1px dashed #eee; color: #777;">2021-Present</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 5px; border-bottom: 1px dashed #eee;"><strong>Reviewer:</strong> <em>IEEE Transactions on Electron Devices</em></td>
+                        <td style="padding: 10px 5px; text-align: right; border-bottom: 1px dashed #eee; color: #777;">2019-Present</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 5px; border-bottom: 1px dashed #eee;"><strong>Reviewer:</strong> <em>IEEE Electron Device Letters</em></td>
+                        <td style="padding: 10px 5px; text-align: right; border-bottom: 1px dashed #eee; color: #777;">2019-Present</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         
         <div id="contact-page" class="page-section">
@@ -626,20 +769,84 @@
                 <span class="zh">联系方式</span>
             </h2>
             
+            <section class="profile-section" style="margin-bottom: 40px; align-items: center;">
+                <img src="profile.jpeg" alt="Dr. Bingjie Dang" class="profile-img" style="align-self: center;">
+                
+                <div class="profile-text" style="flex: 1;">
+                    <ul style="list-style-type: square; padding-left: 20px; margin: 0; line-height: 2;">
+                        <li>
+                            <strong class="en">Dr. Bingjie Dang</strong>
+                            <strong class="zh">党丙杰 博士</strong>
+                        </li>
+                        <li>
+                            <em class="en"><strong>Research Fellow</strong></em>
+                            <em class="zh"><strong>博士后研究员</strong></em>
+                        </li>
+                        <li>
+                            <strong class="en">Address:</strong><strong class="zh">地址：</strong> <span class="en">Materials Science and Engineering, College of Design and Engineering, National University of Singapore. 4 Engineering Drive 3, Singapore 117583</span><span class="zh">新加坡国立大学设计与工程学院 材料科学与工程系 (4 Engineering Drive 3, Singapore 117583)</span>
+                        </li>
+                        <li>
+                            <strong class="en">E-mail:</strong><strong class="zh">邮箱：</strong> <a href="mailto:bingjiedang@gmail.com" style="color: var(--link-blue); text-decoration: underline;">bingjiedang@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="social-icons" style="align-self: center;">
+                    <a href="https://scholar.google.com/citations?user=Mfp83rUAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap" style="color: #4285F4;"></i></a>
+                    <a href="https://www.researchgate.net/profile/Bingjie-Dang" target="_blank" title="ResearchGate"><i class="fab fa-researchgate" style="color: #00ccbb;"></i></a>
+                    <a href="https://orcid.org/0000-0002-3625-2782" target="_blank" title="ORCID"><i class="fab fa-orcid" style="color: #A6CE39;"></i></a>
+                    <a href="https://www.linkedin.com/in/bingjie-dang-745994314/?originalSubdomain=hk" target="_blank" title="LinkedIn"><i class="fab fa-linkedin" style="color: #0077b5;"></i></a>
+                    <a href="https://bingjie-dang.github.io/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a>
+                    <a href="https://sites.google.com/view/bingjie-dang/contact?authuser=0" target="_blank" title="Google Site"><i class="fas fa-globe" style="color: #0F9D58;"></i></a>
+                    <a href="mailto:bingjiedang@gmail.com" title="Gmail"><i class="fas fa-envelope" style="color: #ea4335;"></i></a>
+                </div>
+            </section>
+
             <section class="contact-card">
+                <p class="contact-invite">
+                    <span class="en">We warmly welcome collaborations from researchers in semiconductor materials, device physics, circuits, and algorithm applications.</span>
+                    <span class="zh">欢迎半导体材料、器件物理、电路与算法应用的研究者们积极合作！</span>
+                </p>
+
                 <form id="contact-form" class="contact-form-grid">
                     <div class="contact-form-group">
                         <label class="contact-form-label" for="contact-email">
                             <span class="en">Your Email</span>
                             <span class="zh">您的邮箱</span>
                         </label>
-                        <input id="contact-email" class="contact-input" type="email" name="from_email" required>
+                        <input id="contact-email" class="contact-input" type="email" name="from_email" placeholder="your_email@example.com" required>
                     </div>
+
+                    <div class="contact-form-group">
+                        <label class="contact-form-label" for="contact-name">
+                            <span class="en">Name</span>
+                            <span class="zh">姓名</span>
+                        </label>
+                        <input id="contact-name" class="contact-input" type="text" name="from_name" placeholder="Your name" required>
+                    </div>
+
+                    <div class="contact-form-group full-width">
+                        <label class="contact-form-label" for="contact-affiliation">
+                            <span class="en">Affiliation</span>
+                            <span class="zh">工作单位</span>
+                        </label>
+                        <input id="contact-affiliation" class="contact-input" type="text" name="affiliation" placeholder="University / Institute / Company" required>
+                    </div>
+
+                    <div class="contact-form-group full-width">
+                        <label class="contact-form-label" for="contact-message">
+                            <span class="en">Message</span>
+                            <span class="zh">留言内容</span>
+                        </label>
+                        <textarea id="contact-message" class="contact-textarea" name="message" placeholder="Please leave your message here." required></textarea>
+                    </div>
+
                     <div class="contact-form-group full-width">
                         <button type="submit" class="contact-submit" id="contact-submit-btn">
                             <span class="en">Send Message</span>
                             <span class="zh">发送留言</span>
                         </button>
+                        <div id="contact-helper" class="contact-helper"></div>
                     </div>
                 </form>
             </section>
@@ -654,6 +861,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        // 手机端汉堡菜单切换
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            if (nav) nav.classList.toggle('show');
+        }
+
+        // 粒子特效
         particlesJS('particles-js', {
             "particles": {
                 "number": { "value": 70 },
@@ -670,26 +884,37 @@
             }
         });
 
+        // 页面切换及手机端自动收起菜单
         function switchTab(pageId, btn) {
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(section => section.classList.remove('active'));
+
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(b => b.classList.remove('active'));
             document.getElementById('research-dropdown').classList.remove('active');
+
             document.getElementById(pageId).classList.add('active');
+
             if (btn) {
                 btn.classList.add('active');
                 if (btn.parentElement.classList.contains('dropdown-content')) {
                     document.getElementById('research-dropdown').classList.add('active');
                 }
             }
+            
+            // 收起手机菜单
+            const nav = document.getElementById('main-nav');
+            if (nav) nav.classList.remove('show');
+
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
+        // 中英文切换
         function toggleLang() {
             const htmlElement = document.documentElement;
             const currentLang = htmlElement.getAttribute('lang');
             const btnText = document.getElementById('langBtnText');
+            
             if (currentLang === 'en') {
                 htmlElement.setAttribute('lang', 'zh');
                 btnText.innerText = 'EN'; 
@@ -698,6 +923,149 @@
                 btnText.innerText = '中文'; 
             }
         }
+    </script>
+
+    <script>
+        /* ================= 原有 Google Scholar 及 EmailJS 逻辑完整保留 ================= */
+        const EMAILJS_PUBLIC_KEY = 'sfyb7RjaqncIPjgE1';
+        const EMAILJS_SERVICE_ID = 'service_kcwtosa';
+        const EMAILJS_TEMPLATE_ID = 'template_6egzuaa';
+        const CONTACT_RECEIVER_EMAIL = 'bingjiegang@gmail.com';
+
+        function getWords(text) {
+            return (text || '').toLowerCase().replace(/[^a-z0-9]/g, ' ').split(/\s+/).filter(w => w.length > 2);
+        }
+
+        function createCitationBadge() {
+            const badge = document.createElement('span');
+            badge.className = 'citation-badge loading';
+            badge.innerHTML = '<span class="en">Loading citations...</span><span class="zh">正在加载引用量...</span>';
+            return badge;
+        }
+
+        async function updatePublicationCitations() {
+            const publicationItems = [...document.querySelectorAll('.pub-list li')]
+                .filter(li => li.querySelector('em') || li.innerText.length > 20);
+
+            publicationItems.forEach(li => {
+                if (!li.querySelector('.citation-badge')) {
+                    li.appendChild(document.createElement('br'));
+                    li.appendChild(createCitationBadge());
+                }
+            });
+
+            try {
+                const response = await fetch(`citations.json?v=${Date.now()}`);
+                if (!response.ok) throw new Error('citations.json not found');
+                const data = await response.json();
+                
+                let citationList = [];
+                if (Array.isArray(data)) {
+                    citationList = data;
+                } else if (data.articles) {
+                    citationList = data.articles;
+                    if (data.stats) {
+                        const totalEl = document.getElementById('total-citations-display');
+                        const hIndexEl = document.getElementById('h-index-display');
+                        if (totalEl) totalEl.innerText = data.stats.total_citations || '-';
+                        if (hIndexEl) hIndexEl.innerText = data.stats.h_index || '-';
+                    }
+                }
+
+                const cleanedCitationList = citationList.map(item => ({
+                    cleanTitle: (item.title || '').toLowerCase().replace(/[^a-z0-9]/g, ''),
+                    title: item.title,
+                    count: Number(item.citations || 0)
+                })).filter(item => item.cleanTitle.length > 5);
+
+                publicationItems.forEach(li => {
+                    const badge = li.querySelector('.citation-badge');
+                    const liWords = getWords(li.innerText);
+                    
+                    let bestMatch = null;
+                    let maxOverlap = 0;
+
+                    for (const scholarItem of cleanedCitationList) {
+                        const scholarWords = getWords(scholarItem.title);
+                        if (scholarWords.length === 0) continue;
+                        
+                        let overlap = 0;
+                        for (const w of scholarWords) {
+                            if (liWords.includes(w)) overlap++;
+                        }
+                        
+                        const matchRatio = overlap / scholarWords.length;
+                        
+                        if (matchRatio > 0.5 && matchRatio > maxOverlap) {
+                            maxOverlap = matchRatio;
+                            bestMatch = scholarItem;
+                        }
+                    }
+                    
+                    const finalCount = bestMatch ? Number(bestMatch.count || 0) : 0;
+                    
+                    if (badge) {
+                        badge.classList.remove('error', 'loading');
+                        badge.innerHTML = `<span class="en">Citations: ${finalCount}</span><span class="zh">引用：${finalCount}</span>`;
+                    }
+                });
+            } catch (err) {
+                console.error('Failed to load citations data:', err);
+                publicationItems.forEach(li => {
+                    const badge = li.querySelector('.citation-badge');
+                    if (badge) {
+                        badge.classList.remove('loading');
+                        badge.innerHTML = '<span class="en">Citations: 0</span><span class="zh">引用：0</span>';
+                    }
+                });
+            }
+        }
+
+        function initContactForm() {
+            const helper = document.getElementById('contact-helper');
+            const form = document.getElementById('contact-form');
+            const btn = document.getElementById('contact-submit-btn');
+            if (!form) return;
+
+            if (helper) helper.textContent = '';
+
+            const emailReady = EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY'
+                && EMAILJS_SERVICE_ID !== 'YOUR_EMAILJS_SERVICE_ID'
+                && EMAILJS_TEMPLATE_ID !== 'YOUR_EMAILJS_TEMPLATE_ID'
+                && window.emailjs;
+
+            if (!emailReady) return;
+
+            emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                if (btn) btn.disabled = true;
+                if (helper) helper.textContent = 'Sending...';
+
+                try {
+                    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                        to_email: CONTACT_RECEIVER_EMAIL,
+                        from_email: form.from_email.value,
+                        from_name: form.from_name.value,
+                        affiliation: form.affiliation.value,
+                        message: form.message.value
+                    });
+                    form.reset();
+                    if (helper) helper.textContent = 'Message sent successfully.';
+                } catch (err) {
+                    console.error('Email send failed:', err);
+                    if (helper) helper.textContent = 'Failed to send message. Please try again later.';
+                } finally {
+                    if (btn) btn.disabled = false;
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updatePublicationCitations();
+            initContactForm();
+        });
     </script>
 </body>
 </html>
