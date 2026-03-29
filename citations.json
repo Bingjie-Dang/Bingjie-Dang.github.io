@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1612,
+    "total_citations": 1613,
     "h_index": 18
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 493
+      "citations": 494
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
