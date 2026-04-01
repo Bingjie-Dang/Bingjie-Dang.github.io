@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1616,
+    "total_citations": 1617,
     "h_index": 18
   },
   "articles": [
@@ -22,7 +22,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 92
+      "citations": 93
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
