@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1618,
+    "total_citations": 1620,
     "h_index": 18
   },
   "articles": [
@@ -22,11 +22,11 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 93
+      "citations": 94
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
-      "citations": 85
+      "citations": 86
     },
     {
       "title": "Physically transient threshold switching device based on magnesium oxide for security application",
