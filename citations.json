@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1620,
+    "total_citations": 1619,
     "h_index": 18
   },
   "articles": [
@@ -22,7 +22,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 94
+      "citations": 95
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
@@ -98,11 +98,11 @@
     },
     {
       "title": "Physically Transient Diode with Ultrathin Tunneling layer as Selector for Bipolar One Diode-One Resistor Memory",
-      "citations": 10
+      "citations": 9
     },
     {
       "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
-      "citations": 7
+      "citations": 6
     },
     {
       "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
