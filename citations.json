@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1620,
+    "total_citations": 1622,
     "h_index": 18
   },
   "articles": [
@@ -53,12 +53,12 @@
       "citations": 35
     },
     {
-      "title": "Solution-processed physically transient resistive memory based on magnesium oxide",
+      "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
       "citations": 33
     },
     {
-      "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
-      "citations": 32
+      "title": "Solution-processed physically transient resistive memory based on magnesium oxide",
+      "citations": 33
     },
     {
       "title": "Physically transient memristor synapse based on embedding magnesium nanolayer in oxide for security neuromorphic electronics",
@@ -105,12 +105,12 @@
       "citations": 6
     },
     {
-      "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
+      "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
       "citations": 5
     },
     {
-      "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
-      "citations": 4
+      "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
+      "citations": 5
     },
     {
       "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
