@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1622,
+    "total_citations": 1624,
     "h_index": 18
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 496
+      "citations": 497
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -82,7 +82,7 @@
     },
     {
       "title": "Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion‐Modulated Memtransistors",
-      "citations": 15
+      "citations": 16
     },
     {
       "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
