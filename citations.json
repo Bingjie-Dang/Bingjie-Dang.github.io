@@ -1,16 +1,16 @@
 {
   "stats": {
-    "total_citations": 1624,
-    "h_index": 18
+    "total_citations": 1633,
+    "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 497
+      "citations": 501
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
-      "citations": 177
+      "citations": 178
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -26,19 +26,19 @@
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
-      "citations": 86
+      "citations": 87
     },
     {
       "title": "Physically transient threshold switching device based on magnesium oxide for security application",
       "citations": 65
     },
     {
-      "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
+      "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
       "citations": 48
     },
     {
-      "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
-      "citations": 47
+      "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
+      "citations": 48
     },
     {
       "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
@@ -78,19 +78,19 @@
     },
     {
       "title": "Artificial Astrocyte Memristor with Recoverable Linearity for Neuromorphic Computing",
-      "citations": 18
+      "citations": 19
     },
     {
       "title": "Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion‐Modulated Memtransistors",
       "citations": 16
     },
     {
-      "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
+      "title": "A distributed nanocluster based multi-agent evolutionary network",
       "citations": 15
     },
     {
-      "title": "A distributed nanocluster based multi-agent evolutionary network",
-      "citations": 14
+      "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
+      "citations": 15
     },
     {
       "title": "Highly Uniform Two‐Terminal Artificial Synapses Based on Polycrystalline Hf0.5Zr0.5O2 for Sparsified Back Propagation Networks",
@@ -101,6 +101,10 @@
       "citations": 9
     },
     {
+      "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
+      "citations": 6
+    },
+    {
       "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
       "citations": 6
     },
@@ -109,16 +113,8 @@
       "citations": 5
     },
     {
-      "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
-      "citations": 5
-    },
-    {
       "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
       "citations": 3
-    },
-    {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 2
     },
     {
       "title": "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing",
@@ -127,6 +123,10 @@
     {
       "title": "Hf1-xZrxO2based bipolar selector with high uniformity and high selectivity for large-scale integration of memristor crossbars",
       "citations": 2
+    },
+    {
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
+      "citations": 1
     },
     {
       "title": "One‐Phototransistor–One‐Memristor Array with High‐Linearity Light‐Tunable Weight for Optic Neuromorphic Computing (Adv. Mater. 37/2023)",
