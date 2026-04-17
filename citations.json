@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1633,
+    "total_citations": 1637,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 501
+      "citations": 502
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -22,7 +22,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 95
+      "citations": 96
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
@@ -30,7 +30,7 @@
     },
     {
       "title": "Physically transient threshold switching device based on magnesium oxide for security application",
-      "citations": 65
+      "citations": 66
     },
     {
       "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
@@ -66,7 +66,7 @@
     },
     {
       "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
-      "citations": 27
+      "citations": 28
     },
     {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
@@ -131,6 +131,10 @@
     {
       "title": "One‐Phototransistor–One‐Memristor Array with High‐Linearity Light‐Tunable Weight for Optic Neuromorphic Computing (Adv. Mater. 37/2023)",
       "citations": 1
+    },
+    {
+      "title": "A nitride-based non-volatile memory enabled by electric-field-induced phase transition",
+      "citations": null
     },
     {
       "title": "Secure Electronics: Physically Transient Threshold Switching Device Based on Magnesium Oxide for Security Application (Small 27/2018)",
