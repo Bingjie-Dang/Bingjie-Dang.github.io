@@ -1,7 +1,144 @@
 {
   "stats": {
-    "total_citations": 0,
-    "h_index": 0
+    "total_citations": 1643,
+    "h_index": 19
   },
-  "articles": []
+  "articles": [
+    {
+      "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
+      "citations": 504
+    },
+    {
+      "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
+      "citations": 178
+    },
+    {
+      "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
+      "citations": 118
+    },
+    {
+      "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
+      "citations": 102
+    },
+    {
+      "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
+      "citations": 97
+    },
+    {
+      "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
+      "citations": 87
+    },
+    {
+      "title": "Physically transient threshold switching device based on magnesium oxide for security application",
+      "citations": 66
+    },
+    {
+      "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
+      "citations": 48
+    },
+    {
+      "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
+      "citations": 48
+    },
+    {
+      "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
+      "citations": 37
+    },
+    {
+      "title": "Room temperature-processed a-IGZO Schottky diode for rectifying circuit and bipolar 1D1R crossbar applications",
+      "citations": 36
+    },
+    {
+      "title": "Physically transient true random number generators based on paired threshold switches enabling Monte Carlo method applications",
+      "citations": 35
+    },
+    {
+      "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
+      "citations": 33
+    },
+    {
+      "title": "Solution-processed physically transient resistive memory based on magnesium oxide",
+      "citations": 33
+    },
+    {
+      "title": "Physically transient memristor synapse based on embedding magnesium nanolayer in oxide for security neuromorphic electronics",
+      "citations": 32
+    },
+    {
+      "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
+      "citations": 28
+    },
+    {
+      "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
+      "citations": 26
+    },
+    {
+      "title": "Physically transient optic-neural synapse for secure in-sensor computing",
+      "citations": 22
+    },
+    {
+      "title": "Artificial Astrocyte Memristor with Recoverable Linearity for Neuromorphic Computing",
+      "citations": 19
+    },
+    {
+      "title": "Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion‐Modulated Memtransistors",
+      "citations": 16
+    },
+    {
+      "title": "A distributed nanocluster based multi-agent evolutionary network",
+      "citations": 15
+    },
+    {
+      "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
+      "citations": 15
+    },
+    {
+      "title": "Highly Uniform Two‐Terminal Artificial Synapses Based on Polycrystalline Hf0.5Zr0.5O2 for Sparsified Back Propagation Networks",
+      "citations": 13
+    },
+    {
+      "title": "Physically Transient Diode with Ultrathin Tunneling layer as Selector for Bipolar One Diode-One Resistor Memory",
+      "citations": 9
+    },
+    {
+      "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
+      "citations": 6
+    },
+    {
+      "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
+      "citations": 6
+    },
+    {
+      "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
+      "citations": 5
+    },
+    {
+      "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
+      "citations": 3
+    },
+    {
+      "title": "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing",
+      "citations": 2
+    },
+    {
+      "title": "Hf1-xZrxO2based bipolar selector with high uniformity and high selectivity for large-scale integration of memristor crossbars",
+      "citations": 2
+    },
+    {
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
+      "citations": 1
+    },
+    {
+      "title": "One‐Phototransistor–One‐Memristor Array with High‐Linearity Light‐Tunable Weight for Optic Neuromorphic Computing (Adv. Mater. 37/2023)",
+      "citations": 1
+    },
+    {
+      "title": "A nitride-based non-volatile memory enabled by electric-field-induced phase transition",
+      "citations": null
+    },
+    {
+      "title": "Secure Electronics: Physically Transient Threshold Switching Device Based on Magnesium Oxide for Security Application (Small 27/2018)",
+      "citations": null
+    }
+  ]
 }
