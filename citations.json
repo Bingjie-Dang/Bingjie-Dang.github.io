@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1645,
+    "total_citations": 1650,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 505
+      "citations": 506
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -14,7 +14,7 @@
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
-      "citations": 119
+      "citations": 120
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
@@ -22,7 +22,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 97
+      "citations": 98
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
@@ -54,7 +54,7 @@
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
-      "citations": 33
+      "citations": 34
     },
     {
       "title": "Solution-processed physically transient resistive memory based on magnesium oxide",
@@ -66,7 +66,7 @@
     },
     {
       "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
-      "citations": 28
+      "citations": 29
     },
     {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
