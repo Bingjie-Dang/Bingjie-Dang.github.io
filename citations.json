@@ -1,20 +1,20 @@
 {
   "stats": {
-    "total_citations": 1650,
+    "total_citations": 1644,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 506
+      "citations": 504
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
-      "citations": 178
+      "citations": 177
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
-      "citations": 120
+      "citations": 121
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
@@ -26,19 +26,19 @@
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
-      "citations": 87
+      "citations": 86
     },
     {
       "title": "Physically transient threshold switching device based on magnesium oxide for security application",
       "citations": 66
     },
     {
-      "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
+      "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
       "citations": 48
     },
     {
-      "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
-      "citations": 48
+      "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
+      "citations": 47
     },
     {
       "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
@@ -85,12 +85,12 @@
       "citations": 16
     },
     {
-      "title": "A distributed nanocluster based multi-agent evolutionary network",
+      "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
       "citations": 15
     },
     {
-      "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
-      "citations": 15
+      "title": "A distributed nanocluster based multi-agent evolutionary network",
+      "citations": 14
     },
     {
       "title": "Highly Uniform Two‐Terminal Artificial Synapses Based on Polycrystalline Hf0.5Zr0.5O2 for Sparsified Back Propagation Networks",
@@ -101,15 +101,15 @@
       "citations": 9
     },
     {
-      "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
-      "citations": 6
-    },
-    {
       "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
       "citations": 6
     },
     {
       "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
+      "citations": 5
+    },
+    {
+      "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
       "citations": 5
     },
     {
