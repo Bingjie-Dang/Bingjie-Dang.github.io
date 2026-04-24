@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1644,
+    "total_citations": 1647,
     "h_index": 19
   },
   "articles": [
@@ -26,7 +26,7 @@
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
-      "citations": 86
+      "citations": 87
     },
     {
       "title": "Physically transient threshold switching device based on magnesium oxide for security application",
@@ -66,7 +66,7 @@
     },
     {
       "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
-      "citations": 29
+      "citations": 30
     },
     {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
@@ -117,16 +117,16 @@
       "citations": 3
     },
     {
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
+      "citations": 2
+    },
+    {
       "title": "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing",
       "citations": 2
     },
     {
       "title": "Hf1-xZrxO2based bipolar selector with high uniformity and high selectivity for large-scale integration of memristor crossbars",
       "citations": 2
-    },
-    {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 1
     },
     {
       "title": "One‐Phototransistor–One‐Memristor Array with High‐Linearity Light‐Tunable Weight for Optic Neuromorphic Computing (Adv. Mater. 37/2023)",
