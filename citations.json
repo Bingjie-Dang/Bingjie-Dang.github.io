@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1647,
+    "total_citations": 1652,
     "h_index": 19
   },
   "articles": [
@@ -18,11 +18,11 @@
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
-      "citations": 102
+      "citations": 103
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 98
+      "citations": 99
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
@@ -61,12 +61,12 @@
       "citations": 33
     },
     {
-      "title": "Physically transient memristor synapse based on embedding magnesium nanolayer in oxide for security neuromorphic electronics",
+      "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
       "citations": 32
     },
     {
-      "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
-      "citations": 30
+      "title": "Physically transient memristor synapse based on embedding magnesium nanolayer in oxide for security neuromorphic electronics",
+      "citations": 32
     },
     {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
@@ -113,12 +113,12 @@
       "citations": 5
     },
     {
-      "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
       "citations": 3
     },
     {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 2
+      "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
+      "citations": 3
     },
     {
       "title": "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing",
