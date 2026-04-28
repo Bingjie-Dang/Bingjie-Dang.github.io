@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1655,
+    "total_citations": 1662,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 505
+      "citations": 506
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -18,7 +18,7 @@
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
-      "citations": 103
+      "citations": 104
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
@@ -30,7 +30,7 @@
     },
     {
       "title": "Physically transient threshold switching device based on magnesium oxide for security application",
-      "citations": 66
+      "citations": 67
     },
     {
       "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
@@ -50,7 +50,7 @@
     },
     {
       "title": "Physically transient true random number generators based on paired threshold switches enabling Monte Carlo method applications",
-      "citations": 35
+      "citations": 36
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
@@ -58,6 +58,10 @@
     },
     {
       "title": "Solution-processed physically transient resistive memory based on magnesium oxide",
+      "citations": 34
+    },
+    {
+      "title": "Physically transient memristor synapse based on embedding magnesium nanolayer in oxide for security neuromorphic electronics",
       "citations": 33
     },
     {
@@ -65,12 +69,8 @@
       "citations": 32
     },
     {
-      "title": "Physically transient memristor synapse based on embedding magnesium nanolayer in oxide for security neuromorphic electronics",
-      "citations": 32
-    },
-    {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
-      "citations": 26
+      "citations": 27
     },
     {
       "title": "Physically transient optic-neural synapse for secure in-sensor computing",
