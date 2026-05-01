@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1661,
+    "total_citations": 1663,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 505
+      "citations": 506
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -54,7 +54,7 @@
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
-      "citations": 34
+      "citations": 35
     },
     {
       "title": "Solution-processed physically transient resistive memory based on magnesium oxide",
