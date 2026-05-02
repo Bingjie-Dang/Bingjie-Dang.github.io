@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1663,
+    "total_citations": 1664,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 506
+      "citations": 507
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -18,7 +18,7 @@
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
-      "citations": 104
+      "citations": 105
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
@@ -33,12 +33,12 @@
       "citations": 67
     },
     {
-      "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
+      "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
       "citations": 48
     },
     {
-      "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
-      "citations": 47
+      "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
+      "citations": 48
     },
     {
       "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
@@ -66,7 +66,7 @@
     },
     {
       "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
-      "citations": 32
+      "citations": 31
     },
     {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
@@ -113,12 +113,12 @@
       "citations": 5
     },
     {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
+      "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
       "citations": 3
     },
     {
-      "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
-      "citations": 3
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
+      "citations": 2
     },
     {
       "title": "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing",
