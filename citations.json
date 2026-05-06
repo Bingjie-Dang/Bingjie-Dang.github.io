@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1671,
+    "total_citations": 1673,
     "h_index": 19
   },
   "articles": [
@@ -66,7 +66,7 @@
     },
     {
       "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
-      "citations": 31
+      "citations": 32
     },
     {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
@@ -114,7 +114,7 @@
     },
     {
       "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 3
+      "citations": 4
     },
     {
       "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
