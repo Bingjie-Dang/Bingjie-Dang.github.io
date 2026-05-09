@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1673,
+    "total_citations": 1677,
     "h_index": 19
   },
   "articles": [
@@ -17,12 +17,12 @@
       "citations": 121
     },
     {
-      "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
+      "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
       "citations": 105
     },
     {
-      "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 103
+      "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
+      "citations": 105
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
@@ -33,11 +33,11 @@
       "citations": 67
     },
     {
-      "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
-      "citations": 48
+      "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
+      "citations": 50
     },
     {
-      "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
+      "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
       "citations": 48
     },
     {
