@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1677,
+    "total_citations": 1679,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 508
+      "citations": 509
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -18,7 +18,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 105
+      "citations": 106
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
