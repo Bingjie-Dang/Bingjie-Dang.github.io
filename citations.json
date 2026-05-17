@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1684,
+    "total_citations": 1687,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 511
+      "citations": 512
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -18,7 +18,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 107
+      "citations": 108
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
@@ -105,16 +105,16 @@
       "citations": 6
     },
     {
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
+      "citations": 5
+    },
+    {
       "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
       "citations": 5
     },
     {
       "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
       "citations": 5
-    },
-    {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 4
     },
     {
       "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
