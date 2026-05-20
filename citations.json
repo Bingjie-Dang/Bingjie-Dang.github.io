@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1693,
+    "total_citations": 1692,
     "h_index": 19
   },
   "articles": [
@@ -34,7 +34,7 @@
     },
     {
       "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
-      "citations": 50
+      "citations": 49
     },
     {
       "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
