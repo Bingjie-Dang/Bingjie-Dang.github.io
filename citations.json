@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1692,
+    "total_citations": 1695,
     "h_index": 19
   },
   "articles": [
@@ -34,19 +34,19 @@
     },
     {
       "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
-      "citations": 49
+      "citations": 50
     },
     {
       "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
       "citations": 48
     },
     {
-      "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
-      "citations": 37
+      "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
+      "citations": 38
     },
     {
-      "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
-      "citations": 36
+      "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
+      "citations": 37
     },
     {
       "title": "Room temperature-processed a-IGZO Schottky diode for rectifying circuit and bipolar 1D1R crossbar applications",
