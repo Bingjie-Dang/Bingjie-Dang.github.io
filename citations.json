@@ -6,7 +6,7 @@
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 513
+      "citations": 514
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -14,11 +14,11 @@
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
-      "citations": 121
+      "citations": 122
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 112
+      "citations": 113
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
@@ -41,12 +41,12 @@
       "citations": 48
     },
     {
-      "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
+      "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
       "citations": 38
     },
     {
-      "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
-      "citations": 37
+      "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
+      "citations": 36
     },
     {
       "title": "Room temperature-processed a-IGZO Schottky diode for rectifying circuit and bipolar 1D1R crossbar applications",
@@ -66,7 +66,7 @@
     },
     {
       "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
-      "citations": 32
+      "citations": 31
     },
     {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
@@ -105,16 +105,16 @@
       "citations": 6
     },
     {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 5
-    },
-    {
       "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
       "citations": 5
     },
     {
       "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
       "citations": 5
+    },
+    {
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
+      "citations": 4
     },
     {
       "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
