@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1700,
+    "total_citations": 1702,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 516
+      "citations": 517
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -102,7 +102,7 @@
     },
     {
       "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
-      "citations": 6
+      "citations": 7
     },
     {
       "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
