@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1704,
+    "total_citations": 1709,
     "h_index": 19
   },
   "articles": [
@@ -14,11 +14,11 @@
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
-      "citations": 122
+      "citations": 123
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 116
+      "citations": 118
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
@@ -34,7 +34,7 @@
     },
     {
       "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
-      "citations": 50
+      "citations": 51
     },
     {
       "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
@@ -46,7 +46,7 @@
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
-      "citations": 36
+      "citations": 37
     },
     {
       "title": "Room temperature-processed a-IGZO Schottky diode for rectifying circuit and bipolar 1D1R crossbar applications",
