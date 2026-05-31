@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1709,
+    "total_citations": 1711,
     "h_index": 19
   },
   "articles": [
@@ -10,7 +10,7 @@
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
-      "citations": 181
+      "citations": 182
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -78,7 +78,7 @@
     },
     {
       "title": "Artificial Astrocyte Memristor with Recoverable Linearity for Neuromorphic Computing",
-      "citations": 19
+      "citations": 20
     },
     {
       "title": "Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion‐Modulated Memtransistors",
