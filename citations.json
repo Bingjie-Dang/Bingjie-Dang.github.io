@@ -1,16 +1,16 @@
 {
   "stats": {
-    "total_citations": 1711,
+    "total_citations": 1715,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 517
+      "citations": 518
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
-      "citations": 182
+      "citations": 183
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -26,7 +26,7 @@
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
-      "citations": 88
+      "citations": 89
     },
     {
       "title": "Physically transient threshold switching device based on magnesium oxide for security application",
@@ -42,7 +42,7 @@
     },
     {
       "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
-      "citations": 38
+      "citations": 39
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
