@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1723,
+    "total_citations": 1720,
     "h_index": 19
   },
   "articles": [
@@ -46,7 +46,7 @@
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
-      "citations": 40
+      "citations": 38
     },
     {
       "title": "Room temperature-processed a-IGZO Schottky diode for rectifying circuit and bipolar 1D1R crossbar applications",
@@ -102,7 +102,7 @@
     },
     {
       "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
-      "citations": 7
+      "citations": 6
     },
     {
       "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
