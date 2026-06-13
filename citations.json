@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1722,
+    "total_citations": 1724,
     "h_index": 19
   },
   "articles": [
@@ -61,12 +61,12 @@
       "citations": 34
     },
     {
-      "title": "Physically transient memristor synapse based on embedding magnesium nanolayer in oxide for security neuromorphic electronics",
+      "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
       "citations": 33
     },
     {
-      "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
-      "citations": 32
+      "title": "Physically transient memristor synapse based on embedding magnesium nanolayer in oxide for security neuromorphic electronics",
+      "citations": 33
     },
     {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
@@ -105,16 +105,16 @@
       "citations": 6
     },
     {
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
+      "citations": 5
+    },
+    {
       "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
       "citations": 5
     },
     {
       "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
       "citations": 5
-    },
-    {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 4
     },
     {
       "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
