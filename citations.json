@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1724,
+    "total_citations": 1727,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 523
+      "citations": 525
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -117,12 +117,12 @@
       "citations": 5
     },
     {
-      "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
+      "title": "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing",
       "citations": 3
     },
     {
-      "title": "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing",
-      "citations": 2
+      "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
+      "citations": 3
     },
     {
       "title": "Hf1-xZrxO2based bipolar selector with high uniformity and high selectivity for large-scale integration of memristor crossbars",
