@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1729,
+    "total_citations": 1730,
     "h_index": 19
   },
   "articles": [
@@ -18,7 +18,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 118
+      "citations": 119
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
@@ -46,7 +46,7 @@
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
-      "citations": 40
+      "citations": 39
     },
     {
       "title": "Room temperature-processed a-IGZO Schottky diode for rectifying circuit and bipolar 1D1R crossbar applications",
@@ -101,12 +101,12 @@
       "citations": 9
     },
     {
-      "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
       "citations": 6
     },
     {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 5
+      "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
+      "citations": 6
     },
     {
       "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
