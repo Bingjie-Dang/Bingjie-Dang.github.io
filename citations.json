@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1730,
+    "total_citations": 1732,
     "h_index": 19
   },
   "articles": [
@@ -14,11 +14,11 @@
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
-      "citations": 122
+      "citations": 123
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 119
+      "citations": 120
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
