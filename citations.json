@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1736,
+    "total_citations": 1738,
     "h_index": 19
   },
   "articles": [
@@ -18,7 +18,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 120
+      "citations": 122
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
