@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1744,
+    "total_citations": 1746,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 526
+      "citations": 527
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -30,7 +30,7 @@
     },
     {
       "title": "Physically transient threshold switching device based on magnesium oxide for security application",
-      "citations": 67
+      "citations": 68
     },
     {
       "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
