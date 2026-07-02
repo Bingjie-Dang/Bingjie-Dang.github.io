@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1746,
+    "total_citations": 1747,
     "h_index": 19
   },
   "articles": [
@@ -10,7 +10,7 @@
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
-      "citations": 185
+      "citations": 186
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
