@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1747,
+    "total_citations": 1750,
     "h_index": 19
   },
   "articles": [
@@ -14,7 +14,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 126
+      "citations": 128
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -26,7 +26,7 @@
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
-      "citations": 90
+      "citations": 91
     },
     {
       "title": "Physically transient threshold switching device based on magnesium oxide for security application",
