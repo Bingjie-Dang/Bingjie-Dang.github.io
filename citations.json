@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1750,
+    "total_citations": 1751,
     "h_index": 19
   },
   "articles": [
@@ -14,7 +14,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 128
+      "citations": 129
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
