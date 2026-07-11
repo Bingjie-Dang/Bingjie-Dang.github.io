@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1752,
+    "total_citations": 1756,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 527
+      "citations": 528
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -14,7 +14,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 130
+      "citations": 131
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -42,7 +42,7 @@
     },
     {
       "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
-      "citations": 40
+      "citations": 41
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
@@ -97,12 +97,12 @@
       "citations": 13
     },
     {
-      "title": "Physically Transient Diode with Ultrathin Tunneling layer as Selector for Bipolar One Diode-One Resistor Memory",
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
       "citations": 9
     },
     {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 8
+      "title": "Physically Transient Diode with Ultrathin Tunneling layer as Selector for Bipolar One Diode-One Resistor Memory",
+      "citations": 9
     },
     {
       "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
