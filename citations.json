@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1760,
+    "total_citations": 1767,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 530
+      "citations": 532
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -14,7 +14,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 132
+      "citations": 134
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -42,7 +42,7 @@
     },
     {
       "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
-      "citations": 41
+      "citations": 42
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
@@ -58,7 +58,7 @@
     },
     {
       "title": "Solution-processed physically transient resistive memory based on magnesium oxide",
-      "citations": 34
+      "citations": 35
     },
     {
       "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
@@ -98,7 +98,7 @@
     },
     {
       "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 9
+      "citations": 10
     },
     {
       "title": "Physically Transient Diode with Ultrathin Tunneling layer as Selector for Bipolar One Diode-One Resistor Memory",
