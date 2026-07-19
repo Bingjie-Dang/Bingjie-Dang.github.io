@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1767,
+    "total_citations": 1768,
     "h_index": 19
   },
   "articles": [
@@ -46,7 +46,7 @@
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
-      "citations": 39
+      "citations": 40
     },
     {
       "title": "Room temperature-processed a-IGZO Schottky diode for rectifying circuit and bipolar 1D1R crossbar applications",
