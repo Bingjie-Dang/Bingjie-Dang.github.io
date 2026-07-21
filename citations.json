@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1768,
+    "total_citations": 1772,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 532
+      "citations": 534
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -14,7 +14,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 134
+      "citations": 135
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -42,7 +42,7 @@
     },
     {
       "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
-      "citations": 42
+      "citations": 43
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
