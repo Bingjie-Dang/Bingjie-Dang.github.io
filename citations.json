@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1775,
+    "total_citations": 1777,
     "h_index": 19
   },
   "articles": [
@@ -14,7 +14,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 136
+      "citations": 137
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -49,11 +49,11 @@
       "citations": 40
     },
     {
-      "title": "Room temperature-processed a-IGZO Schottky diode for rectifying circuit and bipolar 1D1R crossbar applications",
-      "citations": 36
+      "title": "Physically transient true random number generators based on paired threshold switches enabling Monte Carlo method applications",
+      "citations": 37
     },
     {
-      "title": "Physically transient true random number generators based on paired threshold switches enabling Monte Carlo method applications",
+      "title": "Room temperature-processed a-IGZO Schottky diode for rectifying circuit and bipolar 1D1R crossbar applications",
       "citations": 36
     },
     {
