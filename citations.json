@@ -1,24 +1,24 @@
 {
   "stats": {
-    "total_citations": 1779,
+    "total_citations": 1785,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 536
+      "citations": 542
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
-      "citations": 186
+      "citations": 189
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 138
+      "citations": 139
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
-      "citations": 124
+      "citations": 123
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
@@ -26,7 +26,7 @@
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
-      "citations": 91
+      "citations": 90
     },
     {
       "title": "Physically transient threshold switching device based on magnesium oxide for security application",
@@ -42,11 +42,11 @@
     },
     {
       "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
-      "citations": 43
+      "citations": 44
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
-      "citations": 40
+      "citations": 43
     },
     {
       "title": "Physically transient true random number generators based on paired threshold switches enabling Monte Carlo method applications",
@@ -57,16 +57,16 @@
       "citations": 36
     },
     {
-      "title": "Solution-processed physically transient resistive memory based on magnesium oxide",
-      "citations": 35
-    },
-    {
       "title": "Physically transient memristor synapse based on embedding magnesium nanolayer in oxide for security neuromorphic electronics",
       "citations": 34
     },
     {
-      "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
+      "title": "Solution-processed physically transient resistive memory based on magnesium oxide",
       "citations": 33
+    },
+    {
+      "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
+      "citations": 28
     },
     {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
@@ -85,16 +85,16 @@
       "citations": 16
     },
     {
-      "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
-      "citations": 15
-    },
-    {
       "title": "A distributed nanocluster based multi-agent evolutionary network",
       "citations": 14
     },
     {
+      "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
+      "citations": 14
+    },
+    {
       "title": "Highly Uniform Two‐Terminal Artificial Synapses Based on Polycrystalline Hf0.5Zr0.5O2 for Sparsified Back Propagation Networks",
-      "citations": 13
+      "citations": 12
     },
     {
       "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
@@ -102,10 +102,14 @@
     },
     {
       "title": "Physically Transient Diode with Ultrathin Tunneling layer as Selector for Bipolar One Diode-One Resistor Memory",
-      "citations": 9
+      "citations": 10
     },
     {
       "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
+      "citations": 7
+    },
+    {
+      "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
       "citations": 6
     },
     {
@@ -113,11 +117,7 @@
       "citations": 5
     },
     {
-      "title": "1-HEMT-1-memristor with hardware encryptor for privacy-preserving image processing",
-      "citations": 5
-    },
-    {
-      "title": "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing",
+      "title": "HZO/HSO superlattice ReFET array integrating optical sensing for neuromorphic vision computing",
       "citations": 4
     },
     {
