@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1785,
+    "total_citations": 1788,
     "h_index": 19
   },
   "articles": [
@@ -38,7 +38,7 @@
     },
     {
       "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
-      "citations": 49
+      "citations": 50
     },
     {
       "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
@@ -46,7 +46,7 @@
     },
     {
       "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
-      "citations": 43
+      "citations": 44
     },
     {
       "title": "Physically transient true random number generators based on paired threshold switches enabling Monte Carlo method applications",
@@ -86,7 +86,7 @@
     },
     {
       "title": "A distributed nanocluster based multi-agent evolutionary network",
-      "citations": 14
+      "citations": 15
     },
     {
       "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
