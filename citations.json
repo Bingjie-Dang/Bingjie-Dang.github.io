@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1788,
+    "total_citations": 1789,
     "h_index": 19
   },
   "articles": [
@@ -98,7 +98,7 @@
     },
     {
       "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 10
+      "citations": 11
     },
     {
       "title": "Physically Transient Diode with Ultrathin Tunneling layer as Selector for Bipolar One Diode-One Resistor Memory",
