@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1789,
+    "total_citations": 1795,
     "h_index": 19
   },
   "articles": [
@@ -14,11 +14,11 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 139
+      "citations": 140
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
-      "citations": 123
+      "citations": 124
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
@@ -78,7 +78,7 @@
     },
     {
       "title": "Artificial Astrocyte Memristor with Recoverable Linearity for Neuromorphic Computing",
-      "citations": 20
+      "citations": 21
     },
     {
       "title": "Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion‐Modulated Memtransistors",
@@ -105,6 +105,10 @@
       "citations": 10
     },
     {
+      "title": "HZO/HSO superlattice ReFET array integrating optical sensing for neuromorphic vision computing",
+      "citations": 7
+    },
+    {
       "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
       "citations": 7
     },
@@ -115,10 +119,6 @@
     {
       "title": "Tuning the ferroelectricity of Hf0.5Zr0.5O2 with alloy electrodes",
       "citations": 5
-    },
-    {
-      "title": "HZO/HSO superlattice ReFET array integrating optical sensing for neuromorphic vision computing",
-      "citations": 4
     },
     {
       "title": "TaOx synapse array based on ion profile engineering for high accuracy neuromorpic computing",
