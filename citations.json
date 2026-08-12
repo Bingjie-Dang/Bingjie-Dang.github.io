@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1795,
+    "total_citations": 1799,
     "h_index": 19
   },
   "articles": [
@@ -10,11 +10,11 @@
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
-      "citations": 189
+      "citations": 190
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 140
+      "citations": 141
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -41,11 +41,11 @@
       "citations": 50
     },
     {
-      "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
-      "citations": 44
+      "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
+      "citations": 45
     },
     {
-      "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
+      "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
       "citations": 44
     },
     {
@@ -93,12 +93,12 @@
       "citations": 14
     },
     {
-      "title": "Highly Uniform Two‐Terminal Artificial Synapses Based on Polycrystalline Hf0.5Zr0.5O2 for Sparsified Back Propagation Networks",
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
       "citations": 12
     },
     {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 11
+      "title": "Highly Uniform Two‐Terminal Artificial Synapses Based on Polycrystalline Hf0.5Zr0.5O2 for Sparsified Back Propagation Networks",
+      "citations": 12
     },
     {
       "title": "Physically Transient Diode with Ultrathin Tunneling layer as Selector for Bipolar One Diode-One Resistor Memory",
