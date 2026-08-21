@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1803,
+    "total_citations": 1805,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 543
+      "citations": 544
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -66,7 +66,7 @@
     },
     {
       "title": "Fully hardware memristive neuromorphic computing enabled by the integration of trainable dendritic neurons and high‐density RRAM chip",
-      "citations": 28
+      "citations": 29
     },
     {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
