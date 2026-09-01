@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1822,
+    "total_citations": 1825,
     "h_index": 19
   },
   "articles": [
@@ -14,7 +14,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 147
+      "citations": 148
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -70,11 +70,11 @@
     },
     {
       "title": "Physically transient memristive synapse with short-term plasticity based on magnesium oxide",
-      "citations": 27
+      "citations": 28
     },
     {
       "title": "Physically transient optic-neural synapse for secure in-sensor computing",
-      "citations": 22
+      "citations": 23
     },
     {
       "title": "Artificial Astrocyte Memristor with Recoverable Linearity for Neuromorphic Computing",
