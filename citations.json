@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1825,
+    "total_citations": 1833,
     "h_index": 19
   },
   "articles": [
@@ -14,7 +14,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 148
+      "citations": 150
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -22,7 +22,7 @@
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
-      "citations": 105
+      "citations": 106
     },
     {
       "title": "One‐phototransistor‐one‐memristor Array with High‐linearity Light‐tunable Weight for Optic Neuromorphic Computing",
@@ -34,19 +34,19 @@
     },
     {
       "title": "Stochastic neuron based on IGZO Schottky diodes for neuromorphic computing",
-      "citations": 52
+      "citations": 53
     },
     {
       "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
       "citations": 50
     },
     {
-      "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
+      "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
       "citations": 46
     },
     {
-      "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
-      "citations": 45
+      "title": "Spatiotemporal audio feature extraction with dynamic memristor-based time-surface neurons",
+      "citations": 46
     },
     {
       "title": "Physically transient true random number generators based on paired threshold switches enabling Monte Carlo method applications",
@@ -89,6 +89,10 @@
       "citations": 15
     },
     {
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
+      "citations": 14
+    },
+    {
       "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
       "citations": 14
     },
@@ -97,16 +101,12 @@
       "citations": 13
     },
     {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 12
-    },
-    {
       "title": "Physically Transient Diode with Ultrathin Tunneling layer as Selector for Bipolar One Diode-One Resistor Memory",
       "citations": 10
     },
     {
       "title": "HZO/HSO superlattice ReFET array integrating optical sensing for neuromorphic vision computing",
-      "citations": 7
+      "citations": 8
     },
     {
       "title": "Physically transient resistive memory with programmable switching behaviors in MgO-Mo based devices",
