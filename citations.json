@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1865,
+    "total_citations": 1869,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 561
+      "citations": 562
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -14,7 +14,7 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 155
+      "citations": 156
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
@@ -50,7 +50,7 @@
     },
     {
       "title": "Room temperature-processed a-IGZO Schottky diode for rectifying circuit and bipolar 1D1R crossbar applications",
-      "citations": 37
+      "citations": 38
     },
     {
       "title": "Physically transient true random number generators based on paired threshold switches enabling Monte Carlo method applications",
@@ -102,7 +102,7 @@
     },
     {
       "title": "Physically Transient Diode with Ultrathin Tunneling layer as Selector for Bipolar One Diode-One Resistor Memory",
-      "citations": 10
+      "citations": 11
     },
     {
       "title": "HZO/HSO superlattice ReFET array integrating optical sensing for neuromorphic vision computing",
