@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1869,
+    "total_citations": 1872,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 562
+      "citations": 563
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -38,7 +38,7 @@
     },
     {
       "title": "Spike-Enabled Audio Learning in Multilevel SynapticMemristor Array-Based Spiking Neural Network",
-      "citations": 50
+      "citations": 51
     },
     {
       "title": "Full van der Waals ambipolar ferroelectric configurable optical hetero‐synapses for in‐sensor computing",
@@ -85,12 +85,12 @@
       "citations": 17
     },
     {
-      "title": "A distributed nanocluster based multi-agent evolutionary network",
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
       "citations": 15
     },
     {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 14
+      "title": "A distributed nanocluster based multi-agent evolutionary network",
+      "citations": 15
     },
     {
       "title": "Physically transient W/ZnO/MgO/W schottky diode for rectifying and artificial synapse",
