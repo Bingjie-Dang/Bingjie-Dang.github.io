@@ -1,12 +1,12 @@
 {
   "stats": {
-    "total_citations": 1881,
+    "total_citations": 1885,
     "h_index": 19
   },
   "articles": [
     {
       "title": "An optoelectronic synapse based on α-In2Se3 with controllable temporal dynamics for multimode and multiscale reservoir computing",
-      "citations": 565
+      "citations": 566
     },
     {
       "title": "Multilayer Reservoir Computing Based on Ferroelectric α‐In2Se3 for Hierarchical Information Processing",
@@ -14,11 +14,11 @@
     },
     {
       "title": "Reconfigurable in-sensor processing based on a multi-phototransistor–one-memristor array",
-      "citations": 159
+      "citations": 161
     },
     {
       "title": "Spike Encoding with Optic Sensory Neurons Enable a Pulse Coupled Neural Network for Ultraviolet Image Segmentation",
-      "citations": 128
+      "citations": 129
     },
     {
       "title": "A bio-inspired physically transient/biodegradable synapse for security neuromorphic computing based on memristors",
