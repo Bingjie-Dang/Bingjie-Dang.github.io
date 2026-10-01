@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_citations": 1885,
+    "total_citations": 1886,
     "h_index": 19
   },
   "articles": [
@@ -81,12 +81,12 @@
       "citations": 21
     },
     {
-      "title": "Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion‐Modulated Memtransistors",
+      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
       "citations": 17
     },
     {
-      "title": "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays",
-      "citations": 16
+      "title": "Neuromorphic Artificial Vision Systems Based on Reconfigurable Ion‐Modulated Memtransistors",
+      "citations": 17
     },
     {
       "title": "A distributed nanocluster based multi-agent evolutionary network",
