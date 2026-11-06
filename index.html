@@ -18,644 +18,328 @@
 <meta content="Bingjie Dang | Research Fellow | National University of Singapore" name="twitter:title"/>
 <meta content="https://bingjie-dang.github.io/profile.jpeg" name="twitter:image"/>
 <script type="application/ld+json">
-
     {
-
       "@context": "https://schema.org",
-
       "@type": "Person",
-
       "name": "Bingjie Dang",
-
       "url": "https://bingjie-dang.github.io/",
-
       "image": "https://bingjie-dang.github.io/profile.jpeg",
-
       "jobTitle": "Research Fellow",
-
       "worksFor": {
-
         "@type": "Organization",
-
         "name": "National University of Singapore"
-
       },
-
       "affiliation": {
-
         "@type": "Organization",
-
         "name": "College of Design and Engineering, National University of Singapore"
-
       },
-
       "email": "mailto:bing.joe@nus.edu.sg",
-
       "sameAs": [
-
         "https://scholar.google.com/citations?user=Mfp83rUAAAAJ&hl=en",
-
         "https://www.researchgate.net/profile/Bingjie-Dang",
-
         "https://orcid.org/0000-0002-3625-2782",
-
         "https://www.linkedin.com/in/bingjie-dang-745994314/?originalSubdomain=hk",
-
         "https://bingjie-dang.github.io/",
-
         "https://sites.google.com/view/bingjie-dang/contact?authuser=0"
-
       ]
-
     }
-
     </script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 <style>
-
         /* ================= 基础颜色与现代科技感排版 ================= */
-
         :root {
-
             --bg-color: #f4f6f9;
-
             --content-bg: #ffffff;
-
             --text-color: #2c3e50;
-
             --header-bg: #ffffff;
-
             --button-hover: #e8f0fe;
-
             --link-blue: #1a73e8;
-
             --accent-dark: #0b5394;
-
         }
-
-
 
         body {
-
             margin: 0;
-
             padding: 0;
-
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-
             background-color: var(--bg-color);
-
             color: var(--text-color);
-
             line-height: 1.6;
-
             position: relative;
-
             overflow-x: hidden; /* 移动端防溢出 */
-
         }
 
-
-
         * { box-sizing: border-box; }
-
         img { max-width: 100%; height: auto; }
 
-
-
         /* ================= 中英文显示控制引擎 ================= */
-
         html[lang="en"] .zh { display: none !important; }
-
         html[lang="zh"] .en { display: none !important; }
-
-
 
         #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
 
-
-
         /* ================= 顶部导航 ================= */
-
         header {
-
             background-color: var(--header-bg);
-
             padding: 12px 5%;
-
             display: flex;
-
             align-items: center;
-
             position: sticky;
-
             top: 0;
-
             z-index: 1000;
-
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-
             flex-wrap: wrap;
-
             gap: 10px;
-
         }
-
-
 
         .site-title {
-
             font-size: 1.4rem;
-
             font-weight: 700;
-
             color: var(--accent-dark);
-
             margin-right: auto;
-
             letter-spacing: 0.5px;
-
         }
-
-
 
         /* 新增：汉堡菜单图标（默认隐藏） */
-
         .menu-toggle {
-
             display: none;
-
             font-size: 1.5rem;
-
             color: var(--accent-dark);
-
             cursor: pointer;
-
             padding: 5px;
-
         }
-
-
 
         nav { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: flex-end; width: auto; }
 
-
-
         .nav-btn {
-
             background: none;
-
             border: none;
-
             color: #5f6368;
-
             font-size: 0.95rem;
-
             font-weight: 600;
-
             padding: 10px 18px;
-
             border-radius: 6px;
-
             cursor: pointer;
-
             transition: all 0.2s ease;
-
             font-family: inherit;
-
             white-space: nowrap;
-
         }
-
-
 
         .nav-btn:hover { background-color: var(--button-hover); color: var(--link-blue); }
 
-
-
         nav > .nav-btn.active, .dropdown.active > .nav-btn {
-
             color: var(--link-blue);
-
             border-bottom: 3px solid var(--link-blue);
-
             border-bottom-left-radius: 0;
-
             border-bottom-right-radius: 0;
-
             background-color: transparent;
-
         }
-
-
 
         .lang-switch-btn {
-
             background-color: var(--link-blue);
-
             color: #fff;
-
             border: none;
-
             padding: 6px 12px;
-
             border-radius: 20px;
-
             font-size: 0.85rem;
-
             font-weight: bold;
-
             cursor: pointer;
-
             margin-left: 15px;
-
             transition: background-color 0.2s;
-
             box-shadow: 0 2px 6px rgba(26, 115, 232, 0.3);
-
         }
-
         .lang-switch-btn:hover { background-color: var(--accent-dark); }
 
-
-
         /* ================= 下拉菜单 ================= */
-
         .dropdown { position: relative; display: inline-block; }
-
         .dropdown-content {
-
             display: none;
-
             position: absolute;
-
             background-color: #ffffff;
-
-            min-width: 240px;
-
+            min-width: 320px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-
             z-index: 1001;
-
             border-radius: 8px;
-
             top: 100%;
-
             left: 0;
-
             padding: 8px 0;
-
             overflow: hidden;
-
         }
-
         .dropdown:hover .dropdown-content {
-
             display: block;
-
             animation: fadeInDrop 0.2s ease-in-out;
-
         }
-
         @keyframes fadeInDrop {
-
             from { opacity: 0; transform: translateY(-5px); }
-
             to { opacity: 1; transform: translateY(0); }
-
         }
-
         .dropdown-content .nav-btn {
-
             width: 100%;
-
             text-align: left;
-
             padding: 12px 20px;
-
             border-radius: 0;
-
             margin: 0;
-
             border-bottom: none;
-
+            white-space: normal;
+            line-height: 1.4;
         }
-
         .dropdown-content .nav-btn.active {
-
             border-left: 4px solid var(--link-blue);
-
             background-color: var(--button-hover);
-
             color: var(--link-blue);
-
         }
-
-
 
         /* ================= 主内容区域 ================= */
-
         .container {
-
             position: relative;
-
             z-index: 1;
-
             width: min(1000px, calc(100% - 24px));
-
             margin: 40px auto;
-
             background-color: var(--content-bg);
-
             padding: 60px 80px;
-
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-
             min-height: 70vh;
-
             border-radius: 12px;
-
         }
-
-
 
         .page-section { display: none; animation: fadeIn 0.4s ease-in-out; }
-
         .page-section.active { display: block; }
-
         @keyframes fadeIn {
-
             from { opacity: 0; transform: translateY(10px); }
-
             to { opacity: 1; transform: translateY(0); }
-
         }
-
-
 
         /* ================= 排版通用样式 ================= */
-
         .profile-section { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 40px; }
-
         .profile-img { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
-
         .profile-text { flex: 1; min-width: 0; font-size: 1.15rem; color: #333; }
-
         .profile-text ul { list-style-type: square; padding-left: 20px; margin: 0; }
-
         .profile-text li { margin-bottom: 12px; padding-left: 5px; }
-
         .profile-text a { color: var(--link-blue); text-decoration: none; font-weight: 500;}
-
         .profile-text a:hover { text-decoration: underline; }
 
-
-
         .social-icons { display: flex; flex-direction: column; gap: 12px; align-items: center; padding-right: 10px; }
-
         .social-icons a { font-size: 1.6rem; text-decoration: none; transition: transform 0.2s ease; }
-
         .social-icons a:hover { transform: scale(1.15); }
 
-
-
         .section-title {
-
             font-size: 1.5rem;
-
             font-weight: bold;
-
             color: var(--accent-dark);
-
             border-bottom: 2px solid #eaebed;
-
             padding-bottom: 10px;
-
             margin-top: 20px;
-
             margin-bottom: 25px;
-
         }
-
-
 
         .year-title {
-
             font-size: 1.2rem;
-
             font-weight: bold;
-
             color: var(--link-blue);
-
             margin-top: 30px;
-
             margin-bottom: 15px;
-
             background-color: var(--button-hover);
-
             padding: 5px 15px;
-
             border-radius: 6px;
-
             display: inline-block;
-
         }
 
-
-
         .pub-list { padding-left: 25px; margin-left: 0; color: #444; }
-
         .pub-list li { margin-bottom: 20px; font-size: 1rem; text-align: justify; padding-left: 5px; position: relative; }
-
         .pub-list em { font-style: italic; font-weight: 600; color: #222; }
 
-
-
         .research-content { display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 40px; }
-
         .research-text { flex: 3; min-width: 300px; font-size: 1.05rem; text-align: justify; color: #444; line-height: 1.8; }
-
         .research-image-box { flex: 2; min-width: 0; background-color: #f8f9fa; border: 2px dashed #d1d5db; border-radius: 8px; padding: 40px 20px; text-align: center; color: #888; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-
         .research-image-box img { max-width: 100%; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; }
 footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; position: relative; z-index: 1;}
 
-
-
         /* ================= Citation & ESI Badges ================= */
-
         .citation-badge {
-
             display: inline-flex; align-items: center; gap: 6px; margin-left: 10px; margin-top: 8px;
-
             padding: 4px 10px; border-radius: 999px; font-size: 0.82rem; font-weight: 600;
-
             background: #eef4ff; color: var(--link-blue); border: 1px solid rgba(26, 115, 232, 0.18); vertical-align: middle;
-
         }
-
         .citation-badge.loading { background: #f5f7fb; color: #7a8699; border-color: #e5e7eb; }
 
-
-
         /* 重点：ESI 标签样式 */
-
         .esi-badge {
-
             display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px;
-
             border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-left: 6px;
-
             text-transform: uppercase; vertical-align: middle;
-
         }
-
         .highly-cited { background-color: #f3e5f5; color: #7b1fa2; border: 1px solid #ce93d8; }
-
         .hot-paper { background-color: #ffebee; color: #d32f2f; border: 1px solid #ef9a9a; }
-
         .esi-badge i { font-size: 0.8rem; }
 
-
-
         /* === Scholar Stats Banner === */
-
         .scholar-stats-banner { display: flex; gap: 24px; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%); border: 1px solid rgba(26, 115, 232, 0.15); padding: 16px 24px; border-radius: 12px; margin-bottom: 25px; align-items: center; box-shadow: 0 4px 12px rgba(26, 115, 232, 0.05); }
-
         .scholar-stat-item { display: flex; align-items: baseline; gap: 8px; }
-
         .scholar-stat-label { font-size: 0.95rem; color: #5f6368; font-weight: 600; }
-
         .scholar-stat-value { font-size: 1.6rem; font-weight: 700; color: var(--accent-dark); }
-
         .scholar-banner-link { margin-left: auto; font-size: 0.95rem; color: var(--link-blue); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 6px; background: #ffffff; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(26, 115, 232, 0.2); transition: all 0.2s ease; }
-
         .scholar-banner-link:hover { background: var(--link-blue); color: #ffffff; border-color: var(--link-blue); }
 
-
-
         .contact-invite { font-size: 1.02rem; line-height: 1.8; color: #334155; margin: 10px 0 18px; }
-
         .contact-card { background: #fbfcfe; border: 1px solid #edf1f7; border-radius: 14px; padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); margin-top: 24px; }
-
         .contact-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
-
         .contact-form-group { display: flex; flex-direction: column; gap: 8px; }
-
         .contact-form-group.full-width { grid-column: 1 / -1; }
-
         .contact-form-label { font-size: 0.95rem; font-weight: 600; color: #334155; }
-
         .contact-input, .contact-textarea { width: 100%; box-sizing: border-box; border: 1px solid #d9e2ef; border-radius: 10px; padding: 12px 14px; font-size: 0.98rem; color: #1f2937; background: #fff; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
-
         .contact-input:focus, .contact-textarea:focus { outline: none; border-color: #1a73e8; box-shadow: 0 0 0 3px rgba(26,115,232,0.12); }
-
         .contact-textarea { min-height: 150px; resize: vertical; }
-
         .contact-submit { display: inline-flex; align-items: center; justify-content: center; min-width: 160px; padding: 12px 22px; border: none; border-radius: 999px; background: linear-gradient(135deg, #1a73e8 0%, #0f5ec4 100%); color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; box-shadow: 0 8px 18px rgba(26,115,232,0.2); }
-
         .contact-submit:disabled { opacity: 0.7; cursor: not-allowed; }
-
         .contact-helper { margin-top: 12px; font-size: 0.92rem; color: #64748b; }
 
-
-
         /* ================= 移动端适配 (Media Queries) ================= */
-
         @media (max-width: 900px) {
-
             header { justify-content: space-between; padding: 10px 5%; }
-
             .menu-toggle { display: block; order: 2; }
-
             .site-title { order: 1; margin-right: 0; }
-
             nav {
-
                 display: none; position: absolute; top: 100%; left: 0;
-
                 width: 100%; background-color: #ffffff; flex-direction: column;
-
                 gap: 0; box-shadow: 0 10px 15px rgba(0,0,0,0.1); padding: 10px 0;
-
                 border-top: 1px solid #eee;
-
             }
-
             nav.show { display: flex; }
-
             .nav-btn { width: 100%; text-align: left; padding: 15px 25px; border-radius: 0; font-size: 0.9rem; }
-
             .nav-btn.active { border-bottom: none; border-left: 4px solid var(--link-blue); background-color: var(--button-hover); }
-
             .lang-switch-btn { margin: 10px 25px; width: fit-content; }
-
-            .dropdown-content { position: static; box-shadow: none; background-color: #f9fafb; padding-left: 20px; display: block; }
-
+            .dropdown-content { position: static; min-width: 0; box-shadow: none; background-color: #f9fafb; padding-left: 20px; display: block; }
             .container { padding: 28px 18px; }
-
             .profile-img { width: 180px; height: 180px; }
-
             .research-text, .research-image-box { flex: 1 1 100%; }
-
             .contact-form-grid { grid-template-columns: 1fr; }
-
             .scholar-stats-banner { flex-direction: column; align-items: flex-start; gap: 12px; }
-
             .scholar-banner-link { margin-left: 0; width: 100%; justify-content: center; }
-
         }
-
-
 
         @media (max-width: 720px) {
-
             header { position: sticky; top: 0; }
-
             .site-title { width: 100%; text-align: center; font-size: 1.15rem; margin-bottom: 4px; }
-
             nav { justify-content: center; }
-
             .container { width: calc(100% - 16px); margin: 12px auto; padding: 20px 14px; border-radius: 10px; }
-
             .profile-section { flex-direction: column; text-align: center; gap: 20px; }
-
             .profile-img { width: 140px; height: 140px; }
-
             .social-icons { flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 14px; padding-right: 0; }
-
             .section-title { font-size: 1.2rem; }
-
             .contact-card { padding: 18px; }
-
             .contact-input, .contact-textarea { font-size: 16px; } /* 防止 iOS 缩放 */
-
         }
-
-
 
         @media (max-width: 480px) {
-
             .container { padding: 16px 12px; }
-
             .nav-btn { font-size: 0.76rem; padding: 7px 9px; }
-
             .profile-img { width: 120px; height: 120px; }
-
             .section-title { font-size: 1.08rem; }
-
             .pub-list { padding-left: 18px; }
-
         }
-
-
 
         @media (hover: none) and (pointer: coarse) {
-
             .dropdown:hover .dropdown-content { display: none; }
-
         }
-
     </style>
 </head>
 <body>
@@ -678,8 +362,14 @@ footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; posi
 <i class="fas fa-caret-down" style="margin-left: 4px;"></i>
 </button>
 <div class="dropdown-content">
-<button class="nav-btn" onclick="switchTab('ferroelectronics-page', this)">
-<span class="en">Physics, materials, devices and circuit system co-integration and design (PDCSCD) for neuromorphic computing chips</span><span class="zh">面向神经形态计算芯片的材料物理、器件与电路系统协同集成与设计（PDCSCD）</span>
+<button class="nav-btn" onclick="switchTab('nonvolatile-page', this)">
+<span class="en">Non-volatile Memory (Memristor / Ferroelectric Devices)</span><span class="zh">非易失性存储（忆阻器 / 铁电器件）</span>
+</button>
+<button class="nav-btn" onclick="switchTab('transistor-page', this)">
+<span class="en">Advanced Transistors (Oxide / Nitride / Low-Dimensional)</span><span class="zh">先进晶体管（氧化物 / 氮化物 / 低维）</span>
+</button>
+<button class="nav-btn" onclick="switchTab('neuromorphic-page', this)">
+<span class="en">Neuromorphic Computing Chips</span><span class="zh">神经形态计算芯片</span>
 </button>
 </div>
 </div>
@@ -745,31 +435,19 @@ footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; posi
 </section>
 <div style="margin-top: -10px; margin-bottom: 24px; font-size: 0.96rem; color: #444; line-height: 1.8;">
 <p class="en" style="margin: 8px 0;">
-
                     Academic profiles:
-
                     <a href="https://scholar.google.com/citations?user=Mfp83rUAAAAJ&amp;hl=en" target="_blank">Google Scholar</a> |
-
                     <a href="https://www.researchgate.net/profile/Bingjie-Dang" target="_blank">ResearchGate</a> |
-
                     <a href="https://orcid.org/0000-0002-3625-2782" target="_blank">ORCID</a> |
-
                     <a href="https://www.linkedin.com/in/bingjie-dang-745994314/?originalSubdomain=hk" target="_blank">LinkedIn</a> |
-
                     <a href="https://bingjie-dang.github.io/" target="_blank">GitHub Homepage</a>
 </p>
 <p class="zh" style="margin: 8px 0;">
-
                     学术主页与资料链接：
-
                     <a href="https://scholar.google.com/citations?user=Mfp83rUAAAAJ&amp;hl=en" target="_blank">Google Scholar</a> |
-
                     <a href="https://www.researchgate.net/profile/Bingjie-Dang" target="_blank">ResearchGate</a> |
-
                     <a href="https://orcid.org/0000-0002-3625-2782" target="_blank">ORCID</a> |
-
                     <a href="https://www.linkedin.com/in/bingjie-dang-745994314/?originalSubdomain=hk" target="_blank">LinkedIn</a> |
-
                     <a href="https://bingjie-dang.github.io/" target="_blank">GitHub 学术主页</a>
 </p>
 </div>
@@ -779,8 +457,12 @@ footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; posi
 <span class="zh">研究方向</span>
 </h2>
 <p style="font-size: 1.1rem; text-align: justify; color: #444; line-height: 1.8;">
-<span class="en">Ferroelectric materials and devices.</span>
-<span class="zh">铁电材料与器件。</span>
+<span class="en">Physics, materials, devices and circuit system co-integration and design (PDCSCD) for neuromorphic computing chips.</span>
+<span class="zh">面向神经形态计算芯片的材料物理、器件与电路系统协同集成与设计（PDCSCD）。</span>
+</p>
+<p style="font-size: 1.05rem; text-align: justify; color: #555; line-height: 1.8; margin-top: 14px;">
+<span class="en">Brain-wave (EEG) signals carry rich information about neural activity, but continuously acquiring, processing, and transmitting them demands low-power, energy-efficient hardware. Neuromorphic chips that co-integrate devices and circuits offer a path to processing these signals at the edge, reducing the volume of data that must be transmitted.</span>
+<span class="zh">脑电波（EEG）信号蕴含丰富的神经活动信息，其连续采集、处理与传输对低功耗、高能效的硬件提出了要求。通过器件与电路的协同集成，神经形态芯片有望在前端实现信号的实时处理，从而减少需要传输的数据量。</span>
 </p>
 </section>
 <section>
@@ -793,7 +475,6 @@ footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; posi
 <li><strong>Bingjie Dang</strong>, Teng Zhang, Fanqi Meng, Keqin Liu, Liutao Yu, Qinghua Zhang, Si Wu, Lin Gu, Ru Huang, Yuchao Yang. "Spiking neural networks with fatigue spike-timing-dependent plasticity learning using hybrid memristor arrays," <em>Nature Electronics</em> 9, 213–224, 2026.</li>
 <li><strong>Bingjie Dang</strong>, Kaixuan Sun, Hanxin Su, Jiaxin Chen, Pengyu Yao, Tao Zeng, Shu Shi, Guowei Zhou, Liang Liu, Xiaohong Xu and Jingsheng Chen, "HZO/HSO Superlattice ReFET Array Integrating Optical Sensing for Neuromorphic Vision Computing," <em>Advanced Materials</em>, e08889, 2025.</li>
 <li><strong>Bingjie Dang</strong>, Teng Zhang, Keqin Liu, Ru Huang, and Yuchao Yang, “Reconfigurable Optic In-Sensor Processing Based on a Multi-Phototransistors-One-Memristor Array,” <em>Nature Electronics</em> 7(11), 991–1003, 2024.
-
                         <span class="esi-badge highly-cited"><i class="fas fa-trophy"></i> <span class="en">Highly Cited Paper</span><span class="zh">高被引论文</span></span>
 <span class="esi-badge hot-paper"><i class="fas fa-fire"></i> <span class="en">Hot Paper</span><span class="zh">热点论文</span></span>
 </li>
@@ -802,27 +483,73 @@ footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; posi
 </ol>
 </section>
 </div>
-<div class="page-section" id="ferroelectronics-page">
+
+<div class="page-section" id="nonvolatile-page">
 <h2 class="section-title">
-<span class="en">Ferroelectric Materials &amp; Devices</span>
-<span class="zh">铁电材料与器件</span>
+<span class="en">Non-volatile Memory (Memristor / Ferroelectric Devices)</span>
+<span class="zh">非易失性存储（忆阻器 / 铁电器件）</span>
 </h2>
 <div class="research-content">
 <div class="research-text">
 <div class="en">
-<p>My research focuses on ferroelectric materials and devices, including material growth, polarization switching, interface engineering, and the development of ferroelectric electronic devices for non-volatile memory and emerging nanoelectronic applications.</p>
+<p>My research on non-volatile memory covers memristor and ferroelectric devices, including resistive switching and polarization switching mechanisms, material growth, interface engineering, and device integration for high-density memory and in-memory computing.</p>
 </div>
 <div class="zh">
-<p>我的研究主要聚焦于铁电材料与器件，包括铁电材料生长、极化翻转、界面工程，以及面向非易失性存储与新型纳米电子学应用的铁电器件研究。</p>
+<p>我的非易失性存储研究涵盖忆阻器与铁电器件，包括阻变与极化翻转机理、材料生长、界面工程，以及面向高密度存储与存内计算的器件集成。</p>
 </div>
 </div>
 <div class="research-image-box">
 <i class="fas fa-layer-group" style="font-size: 3rem; margin-bottom: 10px; color: #a0aab5;"></i>
-<span class="en">[Insert Ferroelectric Materials / Device Image Here]</span>
-<span class="zh">[在此插入铁电材料 / 器件图片]</span>
+<span class="en">[Insert Device Image Here]</span>
+<span class="zh">[在此插入器件图片]</span>
 </div>
 </div>
 </div>
+
+<div class="page-section" id="transistor-page">
+<h2 class="section-title">
+<span class="en">Advanced Transistors (Oxide / Nitride / Low-Dimensional)</span>
+<span class="zh">先进晶体管（氧化物 / 氮化物 / 低维）</span>
+</h2>
+<div class="research-content">
+<div class="research-text">
+<div class="en">
+<p>My research on advanced transistors explores oxide, nitride, and low-dimensional channel materials, focusing on material physics, device structure, and performance and reliability for next-generation logic and memory applications.</p>
+</div>
+<div class="zh">
+<p>我的先进晶体管研究聚焦于氧化物、氮化物及低维沟道材料，关注材料物理、器件结构，以及面向新一代逻辑与存储应用的性能与可靠性。</p>
+</div>
+</div>
+<div class="research-image-box">
+<i class="fas fa-layer-group" style="font-size: 3rem; margin-bottom: 10px; color: #a0aab5;"></i>
+<span class="en">[Insert Device Image Here]</span>
+<span class="zh">[在此插入器件图片]</span>
+</div>
+</div>
+</div>
+
+<div class="page-section" id="neuromorphic-page">
+<h2 class="section-title">
+<span class="en">Neuromorphic Computing Chips</span>
+<span class="zh">神经形态计算芯片</span>
+</h2>
+<div class="research-content">
+<div class="research-text">
+<div class="en">
+<p>My research on neuromorphic computing chips focuses on the co-integration of physics-based devices, circuits, and system architecture, with the aim of building energy-efficient hardware for sensing, learning, and signal processing at the edge.</p>
+</div>
+<div class="zh">
+<p>我的神经形态计算芯片研究聚焦于基于物理机制的器件、电路与系统架构的协同集成，旨在构建面向边缘感知、学习与信号处理的高能效硬件。</p>
+</div>
+</div>
+<div class="research-image-box">
+<i class="fas fa-layer-group" style="font-size: 3rem; margin-bottom: 10px; color: #a0aab5;"></i>
+<span class="en">[Insert Chip Image Here]</span>
+<span class="zh">[在此插入芯片图片]</span>
+</div>
+</div>
+</div>
+
 <div class="page-section" id="publications-page">
 <h2 class="section-title">
 <span class="en">Full Publications List</span>
@@ -854,7 +581,6 @@ footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; posi
 <div class="year-title">2024</div>
 <ol class="pub-list">
 <li><strong>Bingjie Dang</strong>, Teng Zhang, Keqin Liu, Ru Huang, and Yuchao Yang, “Reconfigurable Optic In-Sensor Processing Based on a Multi-Phototransistors-One-Memristor Array,” <em>Nature Electronics</em> 7(11), 991–1003, 2024.
-
                     <span class="esi-badge highly-cited"><i class="fas fa-trophy"></i> <span class="en">Highly Cited Paper</span><span class="zh">高被引论文</span></span>
 <span class="esi-badge hot-paper"><i class="fas fa-fire"></i> <span class="en">Hot Paper</span><span class="zh">热点论文</span></span>
 </li>
@@ -1000,414 +726,210 @@ footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; posi
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-
         // 手机端汉堡菜单切换
-
         function toggleMenu() {
-
             const nav = document.getElementById('main-nav');
-
             if (nav) nav.classList.toggle('show');
-
         }
 
-
-
         // 粒子特效
-
         particlesJS('particles-js', {
-
             "particles": {
-
                 "number": { "value": 70 },
-
                 "color": { "value": "#a0aab5" },
-
                 "shape": { "type": "circle" },
-
                 "opacity": { "value": 0.5 },
-
                 "size": { "value": 3 },
-
                 "line_linked": { "enable": true, "distance": 150, "color": "#a0aab5", "opacity": 0.4, "width": 1.2 },
-
                 "move": { "enable": true, "speed": 1.2 }
-
             },
-
             "interactivity": {
-
                 "events": { "onhover": { "enable": true, "mode": "grab" } },
-
                 "modes": { "grab": { "distance": 180, "line_linked": { "opacity": 0.8 } } }
-
             }
-
         });
 
-
-
         // 页面切换及手机端自动收起菜单
-
         function switchTab(pageId, btn) {
-
             const sections = document.querySelectorAll('.page-section');
-
             sections.forEach(section => section.classList.remove('active'));
 
-
-
             const buttons = document.querySelectorAll('.nav-btn');
-
             buttons.forEach(b => b.classList.remove('active'));
-
             document.getElementById('research-dropdown').classList.remove('active');
-
-
 
             document.getElementById(pageId).classList.add('active');
 
-
-
             if (btn) {
-
                 btn.classList.add('active');
-
                 if (btn.parentElement.classList.contains('dropdown-content')) {
-
                     document.getElementById('research-dropdown').classList.add('active');
-
                 }
-
             }
-
-            
 
             // 收起手机菜单
-
             const nav = document.getElementById('main-nav');
-
             if (nav) nav.classList.remove('show');
 
-
-
             window.scrollTo({top: 0, behavior: 'smooth'});
-
         }
-
-
 
         // 中英文切换
-
         function toggleLang() {
-
             const htmlElement = document.documentElement;
-
             const currentLang = htmlElement.getAttribute('lang');
-
             const btnText = document.getElementById('langBtnText');
 
-            
-
             if (currentLang === 'en') {
-
                 htmlElement.setAttribute('lang', 'zh');
-
-                btnText.innerText = 'EN'; 
-
+                btnText.innerText = 'EN';
             } else {
-
                 htmlElement.setAttribute('lang', 'en');
-
-                btnText.innerText = '中文'; 
-
+                btnText.innerText = '中文';
             }
-
         }
-
     </script>
 <script>
-
         /* ================= 原有 Google Scholar 及 EmailJS 逻辑完整保留 ================= */
-
         const EMAILJS_PUBLIC_KEY = 'sfyb7RjaqncIPjgE1';
-
         const EMAILJS_SERVICE_ID = 'service_kcwtosa';
-
         const EMAILJS_TEMPLATE_ID = 'template_6egzuaa';
-
         const CONTACT_RECEIVER_EMAIL = 'bingjiegang@gmail.com';
 
-
-
         function getWords(text) {
-
             return (text || '').toLowerCase().replace(/[^a-z0-9]/g, ' ').split(/\s+/).filter(w => w.length > 2);
-
         }
-
-
 
         function createCitationBadge() {
-
             const badge = document.createElement('span');
-
             badge.className = 'citation-badge loading';
-
             badge.innerHTML = '<span class="en">Loading citations...</span><span class="zh">正在加载引用量...</span>';
-
             return badge;
-
         }
 
-
-
         async function updatePublicationCitations() {
-
             const publicationItems = [...document.querySelectorAll('.pub-list li')]
-
                 .filter(li => li.querySelector('em') || li.innerText.length > 20);
 
-
-
             publicationItems.forEach(li => {
-
                 if (!li.querySelector('.citation-badge')) {
-
                     li.appendChild(document.createElement('br'));
-
                     li.appendChild(createCitationBadge());
-
                 }
-
             });
 
-
-
             try {
-
                 const response = await fetch(`citations.json?v=${Date.now()}`);
-
                 if (!response.ok) throw new Error('citations.json not found');
-
                 const data = await response.json();
 
-                
-
                 let citationList = [];
-
                 if (Array.isArray(data)) {
-
                     citationList = data;
-
                 } else if (data.articles) {
-
                     citationList = data.articles;
-
                     if (data.stats) {
-
                         const totalEl = document.getElementById('total-citations-display');
-
                         const hIndexEl = document.getElementById('h-index-display');
-
                         if (totalEl) totalEl.innerText = data.stats.total_citations || '-';
-
                         if (hIndexEl) hIndexEl.innerText = data.stats.h_index || '-';
-
                     }
-
                 }
 
-
-
                 const cleanedCitationList = citationList.map(item => ({
-
                     cleanTitle: (item.title || '').toLowerCase().replace(/[^a-z0-9]/g, ''),
-
                     title: item.title,
-
                     count: Number(item.citations || 0)
-
                 })).filter(item => item.cleanTitle.length > 5);
 
-
-
                 publicationItems.forEach(li => {
-
                     const badge = li.querySelector('.citation-badge');
-
                     const liWords = getWords(li.innerText);
 
-                    
-
                     let bestMatch = null;
-
                     let maxOverlap = 0;
 
-
-
                     for (const scholarItem of cleanedCitationList) {
-
                         const scholarWords = getWords(scholarItem.title);
-
                         if (scholarWords.length === 0) continue;
 
-                        
-
                         let overlap = 0;
-
                         for (const w of scholarWords) {
-
                             if (liWords.includes(w)) overlap++;
-
                         }
-
-                        
 
                         const matchRatio = overlap / scholarWords.length;
 
-                        
-
                         if (matchRatio > 0.5 && matchRatio > maxOverlap) {
-
                             maxOverlap = matchRatio;
-
                             bestMatch = scholarItem;
-
                         }
-
                     }
-
-                    
 
                     const finalCount = bestMatch ? Number(bestMatch.count || 0) : 0;
 
-                    
-
                     if (badge) {
-
                         badge.classList.remove('error', 'loading');
-
                         badge.innerHTML = `<span class="en">Citations: ${finalCount}</span><span class="zh">引用：${finalCount}</span>`;
-
                     }
-
                 });
-
             } catch (err) {
-
                 console.error('Failed to load citations data:', err);
-
                 publicationItems.forEach(li => {
-
                     const badge = li.querySelector('.citation-badge');
-
                     if (badge) {
-
                         badge.classList.remove('loading');
-
                         badge.innerHTML = '<span class="en">Citations: 0</span><span class="zh">引用：0</span>';
-
                     }
-
                 });
-
             }
-
         }
 
-
-
         function initContactForm() {
-
             const helper = document.getElementById('contact-helper');
-
             const form = document.getElementById('contact-form');
-
             const btn = document.getElementById('contact-submit-btn');
-
             if (!form) return;
-
-
 
             if (helper) helper.textContent = '';
 
-
-
             const emailReady = EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY'
-
                 && EMAILJS_SERVICE_ID !== 'YOUR_EMAILJS_SERVICE_ID'
-
                 && EMAILJS_TEMPLATE_ID !== 'YOUR_EMAILJS_TEMPLATE_ID'
-
                 && window.emailjs;
-
-
 
             if (!emailReady) return;
 
-
-
             emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
-
-
             form.addEventListener('submit', async (e) => {
-
                 e.preventDefault();
-
                 if (btn) btn.disabled = true;
-
                 if (helper) helper.textContent = 'Sending...';
 
-
-
                 try {
-
                     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-
                         to_email: CONTACT_RECEIVER_EMAIL,
-
                         from_email: form.from_email.value,
-
                         from_name: form.from_name.value,
-
                         affiliation: form.affiliation.value,
-
                         message: form.message.value
-
                     });
-
                     form.reset();
-
                     if (helper) helper.textContent = 'Message sent successfully.';
-
                 } catch (err) {
-
                     console.error('Email send failed:', err);
-
                     if (helper) helper.textContent = 'Failed to send message. Please try again later.';
-
                 } finally {
-
                     if (btn) btn.disabled = false;
-
                 }
-
             });
-
         }
 
-
-
         document.addEventListener('DOMContentLoaded', () => {
-
             updatePublicationCitations();
-
             initContactForm();
-
         });
-
     </script>
 </body>
 </html>
